@@ -12,7 +12,7 @@ toc: false
 >
 > 博客地址：https://blog.linsnow.cn
 >
-> 简介：借问酒家何处有.🎈
+> 简介：无限进步.🎈
 >
 > 我的头像: https://blog.linsnow.cn/img/avatar.png
 

@@ -1,317 +1,363 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on L1nSn0w's Blog</title><link>https://blog.linsnow.cn/en/post/</link><description>Recent content in Posts on L1nSn0w's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 22 Jul 2022 01:20:08 -0700</lastBuildDate><atom:link href="https://blog.linsnow.cn/en/post/index.xml" rel="self" type="application/rss+xml"/><item><title>My AndroidTV Tossing Notes</title><link>https://blog.linsnow.cn/en/p/android-tv/</link><pubDate>Fri, 22 Jul 2022 01:20:08 -0700</pubDate><guid>https://blog.linsnow.cn/en/p/android-tv/</guid><description>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/androidtv.png" alt="Featured image of post My AndroidTV Tossing Notes" />&lt;h2 id="begin">Begin:&lt;/h2>
-&lt;p>I went to Xiaopo Station as usual. Although I am not an Android professional, but with the foundation of iOS jailbreak, a broken Android phone and the WSA launched on Windows 11, I began to understand some things in the field of Android. , The big data is really powerful. After swiping and swiping, they sent me a video of Xiaomi box brushing &lt;code>AndroidTV&lt;/code>. I didn&amp;rsquo;t expect TV boxes to do this. This moment reminded me of being dominated by various advertising pop-ups of Xiaomi boxes. Fear, this time it is saved, without saying a word, just start working.
-🤣&lt;/p>
-&lt;h2 id="what-is-the-androidtv">🤔What is the AndroidTV?&lt;/h2>
-&lt;blockquote>
-&lt;p>AndroidTV is a smart TV platform developed by Google&lt;/p>
-&lt;/blockquote>
-&lt;p>The whole system occupies a small space, there are no advertisements, the animations and ui are very good-looking, and the Google service is built-in. Anyway, it is probably such a thing. Generally, if you want to use this system, you need to buy some TV boxes of the international version.&lt;/p>
-&lt;h2 id="start">😅Start:&lt;/h2>
-&lt;p>Turn on the TV, and have a brief look at the model of the TV box. Mine is MDZ-16-AA, with only 4g of memory, and I have only installed two software. For the special card, it is estimated that it is only a dozen frames. The usb port is poor, so I gave one&amp;hellip; The process of flashing the phone is similar to that of an Android phone. It is also to flash twrp first, and then use twrp to flash other systems. In order to be lazy, I follow the The simple method on the Internet is to downgrade the box first, then root, and then flash into twrp, and then I overturned the car. I thought the TV box was bricked, but I checked it online, but I didn’t expect to save the brick. It can be said that God helped me. , After taking a closer look at the method, it is not difficult but rather troublesome. The specific process will not go into detail. There are many online. The following is a record of the pits I encountered&amp;hellip;&lt;/p>
-&lt;blockquote>
-&lt;ol>
-&lt;li>I don&amp;rsquo;t have a male-to-male usb cable, but I didn&amp;rsquo;t want to wait for the courier, so I made one. Seriously, I won&amp;rsquo;t die if I don&amp;rsquo;t do it. I connected the homemade cable to the two usb ports on the laptop, and the laptop burned out. Broken a usb port, it hurts me to death, sorry, it seems that this cable can&amp;rsquo;t be used, so I can only buy one obediently&lt;/li>
-&lt;li>At first, I didn&amp;rsquo;t know that the Mi box must be connected to the computer and other usb devices, and the adb debugging mode must be turned on. As a result, after entering the recovery mode, twrp automatically deletes the built-in system, resulting in only twrp when booting, and then the remote control and mouse cannot be used. , entered a dead end with serious consequences&lt;/li>
-&lt;li>To use the remote control to enter the automatic flashing machine, you must first delete the connection of the remote control in the Xiaomi box, otherwise you will not want to use the remote control to enter the automatic flashing machine, because I have been doing this step for a long time, and then I saw the solution on the Internet. scheme, and different models have different buttons to enter the automatic flashing machine, a batch of pits&lt;/li>
-&lt;li>Many Android resources on the Internet are unavailable, and various assistants and root tools are also ineffective. The resources are very complicated, which is really annoying. It took several hours just to find various resources.&lt;/li>
-&lt;li>To save the bricks, the millet box needs to be disassembled. It is impossible to open this thing by hand. It took about an hour and a half to disassemble it with tools, and the hands are useless.&lt;/li>
-&lt;li>To connect to the computer after disassembly, you must short-circuit the 2 and 3 contacts at the moment of plugging in, and try repeatedly until you connect to the computer and use a software to force the system into the system, but various errors will be reported, and it will not work after many attempts. , the error is reported only 4%, it is best to check a lot of information before seeing a related content, the reason is that this software has problems running on amd, but my intel mini host is installed with macos, so I want to save the box. I can only install the small host back to Windows, and finally successfully solved the error&lt;/li>
-&lt;/ol>
-&lt;/blockquote>
-&lt;h2 id="the-effect-after-a-series-of-tossing">😍The effect after a series of tossing:&lt;/h2>
-&lt;blockquote>
-&lt;p>Android version：Android5.1.1&lt;/p>
-&lt;p>Firmware comes with supersu&lt;/p>
-&lt;p>Support Google Play Store and YouTube&lt;/p>
-&lt;p>and so on&amp;hellip;&lt;/p>
-&lt;/blockquote>
-&lt;h3 id="let-me-see">😅Let me see:&lt;/h3>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/miboxatv.jpg"
-width="1706"
-height="1280"
-srcset="https://blog.linsnow.cn/en/p/android-tv/miboxatv_hu5ef9cff983667faf8c02fc4a444c6f9e_67257_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/miboxatv_hu5ef9cff983667faf8c02fc4a444c6f9e_67257_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="133"
-data-flex-basis="319px"
->&lt;/p>
-&lt;p>Sorry for the bad shot, just take a look&lt;/p>
-&lt;h3 id="the-experience-after-the-box-is-flashed">🤔The experience after the box is flashed&lt;/h3>
-&lt;p>Generally speaking, it is very good, at least there are no ads and all kinds of memory are insufficient, but it is still a bit difficult to watch YouTube with crash in the box, because the box has insufficient computing power, so it can only be reluctant. It is recommended to use a soft router or a router. Patriotic Internet Directly&lt;/p>
-&lt;h2 id="take-it-to-the-next-level">😅Take it to the next level&lt;/h2>
-&lt;p>After tossing a series of millet boxes, once again with the help of big data, I flashed an ancient project: &lt;code>Android TV X86&lt;/code>, which is really a link, just in front of me, the mini host has flashed windows, anyway, mainly With my laptop, I might as well flash it to AndroidTV, which can also solve the problem of slow Internet access in patriotism. With the large capacity of the hard disk, this garbage can be put to good use. The ancient cpu of i3-4360 runs Android can kill most ordinary TV boxes in seconds, just do it&amp;hellip;&lt;/p>
-&lt;h2 id="let-me-see-1">😍Let me see:&lt;/h2>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/atv.jpg"
-width="942"
-height="532"
-srcset="https://blog.linsnow.cn/en/p/android-tv/atv_huc27a65b83ed761250757046c3968d8eb_23568_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/atv_huc27a65b83ed761250757046c3968d8eb_23568_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="177"
-data-flex-basis="424px"
->&lt;/p>
-&lt;h2 id="sowhat-is-the-android-tv-x86">🤔So,What is the Android TV X86&lt;/h2>
-&lt;blockquote>
-&lt;p>Android TV x86 &lt;strong>created by developer AmznUser444 Dev&lt;/strong>. Because the root of the ROM is the Android-x86 project. The initial version was based on Android 9 Pie, and its system requirements only required a 1.2 GHz dual-core 64-bit capable processor, and a typical Intel/NVIDIA/AMD GPU with 64MB of video memory.&lt;/p>
-&lt;/blockquote>
-&lt;p>Simply put, it is a system that allows your computer to run Android TV.&lt;/p>
-&lt;h2 id="find-the-resources-you-need">🥱Find the resources you need&lt;/h2>
-&lt;p>This thing seems to be produced by only two foreign teams. In order to get the latest version, I Googled it and joined the &lt;code>discord&lt;/code> of these two teams, but one of them seems to have not been developed, and the version is stuck at &lt;code>Android 9&lt;/code> &lt;code>Only the other one is still under slow development. The latest AndroidTV version is &lt;/code>Android11&lt;code>, but the author will charge for mirror download, about 10 euros. Anyway, I really can't afford it, so I only Can download its free version, the free one is &lt;/code>Android 9`, comfort yourself and say: It&amp;rsquo;s enough anyway.&lt;/p>
-&lt;p>After some understanding and practice, the AndroidTV x86 produced by the team that has not been developed encountered some problems during the installation process. It is estimated that my food or mirroring is not good, so it is recommended to use the AndroidTV that is still under maintenance.&lt;/p>
-&lt;h2 id="practice-process">🤔practice process&lt;/h2>
-&lt;ol>
-&lt;li>Partition the hard disk in advance, and set the name of the hard disk to remember. The format is set to &lt;code>ext4&lt;/code>. I probably divided it into 64GB, but in fact, I don&amp;rsquo;t need so much, it&amp;rsquo;s too wasteful, 10G is probably enough.&lt;/li>
-&lt;li>Download &lt;code>Android TV x86&lt;/code> image and &lt;code>Rufus&lt;/code> burning software, Rufus official website: &lt;a class="link" href="https://github.com/pbatard/rufus/releases/" target="_blank" rel="noopener"
->https://github.com/pbatard/rufus/releases/&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Rufus&lt;/strong> open to see if the U disk is displayed and then select the image, the partition type is set to &lt;code>MBR&lt;/code>, the boot is set to &lt;code>BIOS or EFI&lt;/code>, the file system is set to &lt;code>Large FAT32&lt;/code>, otherwise the default is OK, Then burn it directly to the U disk in ISO mode at the beginning&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/rufus.jpg"
-width="414"
-height="649"
-srcset="https://blog.linsnow.cn/en/p/android-tv/rufus_hu4cb6143f05536bdb646211f2ecc53fc2_34124_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/rufus_hu4cb6143f05536bdb646211f2ecc53fc2_34124_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="63"
-data-flex-basis="153px"
->&lt;/p>
-&lt;ol start="4">
-&lt;li>Restart the computer and enter the bios to set the boot sequence of the U disk or directly press the shortcut start button to start. Different motherboards correspond to different buttons. Baidu, pay attention to the BIOS settings to turn off the secure boot&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/boot.jpg"
-width="1706"
-height="1280"
-srcset="https://blog.linsnow.cn/en/p/android-tv/boot_hucb91e0cf81b26ad6233cdf5996b8cca3_86571_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/boot_hucb91e0cf81b26ad6233cdf5996b8cca3_86571_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="133"
-data-flex-basis="319px"
->&lt;/p>
-&lt;ol start="5">
-&lt;li>Enter the installation interface and select &lt;strong>installation - Android-x86 to harddisk&lt;/strong> (just &lt;strong>Run Android x86&lt;/strong> if you don&amp;rsquo;t want to install to the hard disk)&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/selecttv.jpg"
-width="942"
-height="707"
-srcset="https://blog.linsnow.cn/en/p/android-tv/selecttv_hu68c789ca63663b3684cf799752779f75_20550_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/selecttv_hu68c789ca63663b3684cf799752779f75_20550_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="133"
-data-flex-basis="319px"
->&lt;/p>
-&lt;ol start="6">
-&lt;li>Select the hard disk that Android TV x86 needs to install (&lt;strong>hard disk partition in advance&lt;/strong>),&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/choosepartion.jpg"
-width="942"
-height="707"
-srcset="https://blog.linsnow.cn/en/p/android-tv/choosepartion_hu18d286fa22a63ed0a352a64dcd5a5399_22270_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/choosepartion_hu18d286fa22a63ed0a352a64dcd5a5399_22270_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="133"
-data-flex-basis="319px"
->&lt;/p>
-&lt;ol start="7">
-&lt;li>choose ext4,&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/ext4.jpg"
-width="600"
-height="333"
-srcset="https://blog.linsnow.cn/en/p/android-tv/ext4_hu9b3c091d7a460c3e415fafb78c627005_4966_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/ext4_hu9b3c091d7a460c3e415fafb78c627005_4966_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="180"
-data-flex-basis="432px"
->&lt;/p>
-&lt;ol start="8">
-&lt;li>Prompt to select all &lt;strong>YES&lt;/strong>，&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/grab.jpg"
-width="600"
-height="333"
-srcset="https://blog.linsnow.cn/en/p/android-tv/grab_huaaa47f0bfbd04787c041551523c4cd7f_3086_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/grab_huaaa47f0bfbd04787c041551523c4cd7f_3086_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="180"
-data-flex-basis="432px"
->&lt;/p>
-&lt;ol start="9">
-&lt;li>After the installation is complete, you can unplug the U disk. If you do not enter the system, you can check the boot sequence.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/atvrun.jpg"
-width="600"
-height="333"
-srcset="https://blog.linsnow.cn/en/p/android-tv/atvrun_hu5a1e1e4613d632dca8b40df32f877c09_4678_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/atvrun_hu5a1e1e4613d632dca8b40df32f877c09_4678_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="180"
-data-flex-basis="432px"
->&lt;/p>
-&lt;h3 id="note-after-installation">🙌Note after installation：&lt;/h3>
-&lt;blockquote>
-&lt;p>Skip the Paypal QR code interface&lt;/p>
-&lt;/blockquote>
-&lt;p>1：press Ctrl+alt+F1&lt;/p>
-&lt;p>2：input&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl"> pm disable com.tosanthony.tv.networkprovider
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>then press (Enter)&lt;/p>
-&lt;p>3：Press Ctrl+alt+F7 or F8 back to Main interface&lt;/p>
-&lt;blockquote>
-&lt;p>Crude way of setting interface skipping auto-update and google login:&lt;/p>
-&lt;/blockquote>
-&lt;p>1.press Ctrl+alt+F1 to enter Console
-2.input&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pm disable com.google.android.tungsten.setupwraith
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>3.press Enter
-4.Ctrl+alt+F7 ，（If your home network is already patriotic, you don&amp;rsquo;t have to skip Google login.）&lt;/p>
-&lt;blockquote>
-&lt;p>How to install software with adb?&lt;/p>
-&lt;/blockquote>
-&lt;ol>
-&lt;li>Download the application to the U disk, insert the U disk&lt;/li>
-&lt;li>Press Ctrl+Alt+F1 to enter the console,&lt;/li>
-&lt;li>Type &lt;code>cd storage&lt;/code>, then press Enter,&lt;/li>
-&lt;li>Enter ls again, and then press Enter. Generally, the first name displayed is the name of your U disk.&lt;/li>
-&lt;li>Enter &lt;code>cd your u disk name&lt;/code>, you can enter the first few letters of the u disk name and then press the tab key to automatically complete&lt;/li>
-&lt;li>Enter ls again and press Enter to find the apk installation package according to your U disk directory&lt;/li>
-&lt;li>Use the cp command to copy the apk to the /data/local/tmp directory&lt;/li>
-&lt;/ol>
-&lt;p>E.g&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">cp bilibili.apk （Note that there is a space）/data/local/tmp/bilibili.apk
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Enter the tmp directory and enter cd /data/local/tmp&lt;/p>
-&lt;p>Install apk, enter pm install bilibili.apk and output Success indicates successful installation&lt;/p>
-&lt;p>Press Ctrl+alt+F7 to return to the main interface&lt;/p>
-&lt;p>It is recommended to install Dangbei Market for the first software, because you can directly download and install many commonly used software in the back without entering the code.&lt;/p>
-&lt;blockquote>
-&lt;p>Enable arm compatibility&lt;/p>
-&lt;/blockquote>
-&lt;ol>
-&lt;li>
-&lt;p>Download the corresponding houdini file, houdini9_y.sfs&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Copy to U disk&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Press Ctrl+Alt+F1 to enter the console and save the file in the storage/.. directory&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Enter the same as above, enter ls&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Find the storage directory, enter cd U disk name to enter your U disk, enter ls, and check whether the houdini9_y.sfs file you copied is in the current directory.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Enter&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">cp houdini9_y.sfs /system/etc
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>and press enter&lt;/p>
-&lt;ol start="7">
-&lt;li>Enter&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">enable_nativebridge
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>and press enter&lt;/p>
-&lt;ol start="8">
-&lt;li>Enter&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">reboot
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>and press enter&lt;/p>
-&lt;blockquote>
-&lt;p>Remote control:&lt;/p>
-&lt;/blockquote>
-&lt;p>After installing the Wukong remote control for AndroidTV, you can use your mobile phone as a remote control, or buy a usb remote control for about ten yuan&lt;/p>
-&lt;hr>
-&lt;h2 id="android-tv-x86-experience">🎈Android TV x86 experience:&lt;/h2>
-&lt;p>Although it can only be 1080p, the display is still very clear. It also supports Google services, but it can&amp;rsquo;t use Netflix. It is very comfortable to use in general&amp;hellip;&lt;/p>
-&lt;h2 id="android-tv-x86-resource-and-link-summary">🎈Android TV x86 resource and link summary:&lt;/h2>
-&lt;blockquote>
-&lt;p>In order to get rid of the speed limit of Baidu network disk, I transferred the file to Alibaba cloud disk, and changed the suffix to mp4, so after downloading it, I can change it to iso, and the downloaded houdini9_y.mp4 should be renamed to houdini9_y.sfs&lt;/p>
-&lt;/blockquote>
-&lt;p>AndroidTV mirror file link:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://www.aliyundrive.com/s/oPYD7AHJJc3
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Rufus burning software link:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://github.com/pbatard/rufus/releases/
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Dangbei Market Link:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://www.dangbei.com/
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>houdini9_y.sfs download:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://www.aliyundrive.com/s/oPYD7AHJJc3
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>discord group:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://discord.gg/yUwdq8x
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;hr></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on L1nSn0w&#39;s Blog</title>
+        <link>https://blog.linsnow.cn/en/post/</link>
+        <description>Recent content in Posts on L1nSn0w&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Fri, 22 Jul 2022 01:20:08 -0700</lastBuildDate><atom:link href="https://blog.linsnow.cn/en/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>My AndroidTV Tossing Notes</title>
+        <link>https://blog.linsnow.cn/en/p/android-tv/</link>
+        <pubDate>Fri, 22 Jul 2022 01:20:08 -0700</pubDate>
+        
+        <guid>https://blog.linsnow.cn/en/p/android-tv/</guid>
+        <description>&lt;img src="https://blog.linsnow.cn/en/p/android-tv/androidtv.png" alt="Featured image of post My AndroidTV Tossing Notes" /&gt;&lt;h2 id=&#34;begin&#34;&gt;Begin:&lt;/h2&gt;
+&lt;p&gt;I went to Xiaopo Station as usual. Although I am not an Android professional, but with the foundation of iOS jailbreak, a broken Android phone and the WSA launched on Windows 11, I began to understand some things in the field of Android. , The big data is really powerful. After swiping and swiping, they sent me a video of Xiaomi box brushing &lt;code&gt;AndroidTV&lt;/code&gt;. I didn&amp;rsquo;t expect TV boxes to do this. This moment reminded me of being dominated by various advertising pop-ups of Xiaomi boxes. Fear, this time it is saved, without saying a word, just start working.
+🤣&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-androidtv&#34;&gt;🤔What is the AndroidTV?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AndroidTV is a smart TV platform developed by Google&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The whole system occupies a small space, there are no advertisements, the animations and ui are very good-looking, and the Google service is built-in. Anyway, it is probably such a thing. Generally, if you want to use this system, you need to buy some TV boxes of the international version.&lt;/p&gt;
+&lt;h2 id=&#34;start&#34;&gt;😅Start:&lt;/h2&gt;
+&lt;p&gt;Turn on the TV, and have a brief look at the model of the TV box. Mine is MDZ-16-AA, with only 4g of memory, and I have only installed two software. For the special card, it is estimated that it is only a dozen frames. The usb port is poor, so I gave one&amp;hellip; The process of flashing the phone is similar to that of an Android phone. It is also to flash twrp first, and then use twrp to flash other systems. In order to be lazy, I follow the The simple method on the Internet is to downgrade the box first, then root, and then flash into twrp, and then I overturned the car. I thought the TV box was bricked, but I checked it online, but I didn’t expect to save the brick. It can be said that God helped me. , After taking a closer look at the method, it is not difficult but rather troublesome. The specific process will not go into detail. There are many online. The following is a record of the pits I encountered&amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;I don&amp;rsquo;t have a male-to-male usb cable, but I didn&amp;rsquo;t want to wait for the courier, so I made one. Seriously, I won&amp;rsquo;t die if I don&amp;rsquo;t do it. I connected the homemade cable to the two usb ports on the laptop, and the laptop burned out. Broken a usb port, it hurts me to death, sorry, it seems that this cable can&amp;rsquo;t be used, so I can only buy one obediently&lt;/li&gt;
+&lt;li&gt;At first, I didn&amp;rsquo;t know that the Mi box must be connected to the computer and other usb devices, and the adb debugging mode must be turned on. As a result, after entering the recovery mode, twrp automatically deletes the built-in system, resulting in only twrp when booting, and then the remote control and mouse cannot be used. , entered a dead end with serious consequences&lt;/li&gt;
+&lt;li&gt;To use the remote control to enter the automatic flashing machine, you must first delete the connection of the remote control in the Xiaomi box, otherwise you will not want to use the remote control to enter the automatic flashing machine, because I have been doing this step for a long time, and then I saw the solution on the Internet. scheme, and different models have different buttons to enter the automatic flashing machine, a batch of pits&lt;/li&gt;
+&lt;li&gt;Many Android resources on the Internet are unavailable, and various assistants and root tools are also ineffective. The resources are very complicated, which is really annoying. It took several hours just to find various resources.&lt;/li&gt;
+&lt;li&gt;To save the bricks, the millet box needs to be disassembled. It is impossible to open this thing by hand. It took about an hour and a half to disassemble it with tools, and the hands are useless.&lt;/li&gt;
+&lt;li&gt;To connect to the computer after disassembly, you must short-circuit the 2 and 3 contacts at the moment of plugging in, and try repeatedly until you connect to the computer and use a software to force the system into the system, but various errors will be reported, and it will not work after many attempts. , the error is reported only 4%, it is best to check a lot of information before seeing a related content, the reason is that this software has problems running on amd, but my intel mini host is installed with macos, so I want to save the box. I can only install the small host back to Windows, and finally successfully solved the error&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;the-effect-after-a-series-of-tossing&#34;&gt;😍The effect after a series of tossing:&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Android version：Android5.1.1&lt;/p&gt;
+&lt;p&gt;Firmware comes with supersu&lt;/p&gt;
+&lt;p&gt;Support Google Play Store and YouTube&lt;/p&gt;
+&lt;p&gt;and so on&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;let-me-see&#34;&gt;😅Let me see:&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/miboxatv.jpg&#34;
+	width=&#34;1706&#34;
+	height=&#34;1280&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/miboxatv_hu5ef9cff983667faf8c02fc4a444c6f9e_67257_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/miboxatv_hu5ef9cff983667faf8c02fc4a444c6f9e_67257_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Sorry for the bad shot, just take a look&lt;/p&gt;
+&lt;h3 id=&#34;the-experience-after-the-box-is-flashed&#34;&gt;🤔The experience after the box is flashed&lt;/h3&gt;
+&lt;p&gt;Generally speaking, it is very good, at least there are no ads and all kinds of memory are insufficient, but it is still a bit difficult to watch YouTube with crash in the box, because the box has insufficient computing power, so it can only be reluctant. It is recommended to use a soft router or a router. Patriotic Internet Directly&lt;/p&gt;
+&lt;h2 id=&#34;take-it-to-the-next-level&#34;&gt;😅Take it to the next level&lt;/h2&gt;
+&lt;p&gt;After tossing a series of millet boxes, once again with the help of big data, I flashed an ancient project: &lt;code&gt;Android TV X86&lt;/code&gt;, which is really a link, just in front of me, the mini host has flashed windows, anyway, mainly With my laptop, I might as well flash it to AndroidTV, which can also solve the problem of slow Internet access in patriotism. With the large capacity of the hard disk, this garbage can be put to good use. The ancient cpu of i3-4360 runs Android can kill most ordinary TV boxes in seconds, just do it&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;let-me-see-1&#34;&gt;😍Let me see:&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/atv.jpg&#34;
+	width=&#34;942&#34;
+	height=&#34;532&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/atv_huc27a65b83ed761250757046c3968d8eb_23568_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/atv_huc27a65b83ed761250757046c3968d8eb_23568_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;424px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;sowhat-is-the-android-tv-x86&#34;&gt;🤔So,What is the Android TV X86&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Android TV x86 &lt;strong&gt;created by developer AmznUser444 Dev&lt;/strong&gt;. Because the root of the ROM is the Android-x86 project. The initial version was based on Android 9 Pie, and its system requirements only required a 1.2 GHz dual-core 64-bit capable processor, and a typical Intel/NVIDIA/AMD GPU with 64MB of video memory.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Simply put, it is a system that allows your computer to run Android TV.&lt;/p&gt;
+&lt;h2 id=&#34;find-the-resources-you-need&#34;&gt;🥱Find the resources you need&lt;/h2&gt;
+&lt;p&gt;This thing seems to be produced by only two foreign teams. In order to get the latest version, I Googled it and joined the &lt;code&gt;discord&lt;/code&gt; of these two teams, but one of them seems to have not been developed, and the version is stuck at &lt;code&gt;Android 9&lt;/code&gt; &lt;code&gt;Only the other one is still under slow development. The latest AndroidTV version is &lt;/code&gt;Android11&lt;code&gt;, but the author will charge for mirror download, about 10 euros. Anyway, I really can&#39;t afford it, so I only Can download its free version, the free one is &lt;/code&gt;Android 9`, comfort yourself and say: It&amp;rsquo;s enough anyway.&lt;/p&gt;
+&lt;p&gt;After some understanding and practice, the AndroidTV x86 produced by the team that has not been developed encountered some problems during the installation process. It is estimated that my food or mirroring is not good, so it is recommended to use the AndroidTV that is still under maintenance.&lt;/p&gt;
+&lt;h2 id=&#34;practice-process&#34;&gt;🤔practice process&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Partition the hard disk in advance, and set the name of the hard disk to remember. The format is set to &lt;code&gt;ext4&lt;/code&gt;. I probably divided it into 64GB, but in fact, I don&amp;rsquo;t need so much, it&amp;rsquo;s too wasteful, 10G is probably enough.&lt;/li&gt;
+&lt;li&gt;Download &lt;code&gt;Android TV x86&lt;/code&gt; image and &lt;code&gt;Rufus&lt;/code&gt; burning software, Rufus official website: &lt;a class=&#34;link&#34; href=&#34;https://github.com/pbatard/rufus/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/pbatard/rufus/releases/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rufus&lt;/strong&gt; open to see if the U disk is displayed and then select the image, the partition type is set to &lt;code&gt;MBR&lt;/code&gt;, the boot is set to &lt;code&gt;BIOS or EFI&lt;/code&gt;, the file system is set to &lt;code&gt;Large FAT32&lt;/code&gt;, otherwise the default is OK, Then burn it directly to the U disk in ISO mode at the beginning&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/rufus.jpg&#34;
+	width=&#34;414&#34;
+	height=&#34;649&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/rufus_hu4cb6143f05536bdb646211f2ecc53fc2_34124_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/rufus_hu4cb6143f05536bdb646211f2ecc53fc2_34124_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;63&#34;
+		data-flex-basis=&#34;153px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Restart the computer and enter the bios to set the boot sequence of the U disk or directly press the shortcut start button to start. Different motherboards correspond to different buttons. Baidu, pay attention to the BIOS settings to turn off the secure boot&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/boot.jpg&#34;
+	width=&#34;1706&#34;
+	height=&#34;1280&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/boot_hucb91e0cf81b26ad6233cdf5996b8cca3_86571_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/boot_hucb91e0cf81b26ad6233cdf5996b8cca3_86571_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Enter the installation interface and select &lt;strong&gt;installation - Android-x86 to harddisk&lt;/strong&gt; (just &lt;strong&gt;Run Android x86&lt;/strong&gt; if you don&amp;rsquo;t want to install to the hard disk)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/selecttv.jpg&#34;
+	width=&#34;942&#34;
+	height=&#34;707&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/selecttv_hu68c789ca63663b3684cf799752779f75_20550_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/selecttv_hu68c789ca63663b3684cf799752779f75_20550_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Select the hard disk that Android TV x86 needs to install (&lt;strong&gt;hard disk partition in advance&lt;/strong&gt;),&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/choosepartion.jpg&#34;
+	width=&#34;942&#34;
+	height=&#34;707&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/choosepartion_hu18d286fa22a63ed0a352a64dcd5a5399_22270_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/choosepartion_hu18d286fa22a63ed0a352a64dcd5a5399_22270_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;choose ext4,&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/ext4.jpg&#34;
+	width=&#34;600&#34;
+	height=&#34;333&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/ext4_hu9b3c091d7a460c3e415fafb78c627005_4966_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/ext4_hu9b3c091d7a460c3e415fafb78c627005_4966_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;180&#34;
+		data-flex-basis=&#34;432px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Prompt to select all &lt;strong&gt;YES&lt;/strong&gt;，&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/grab.jpg&#34;
+	width=&#34;600&#34;
+	height=&#34;333&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/grab_huaaa47f0bfbd04787c041551523c4cd7f_3086_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/grab_huaaa47f0bfbd04787c041551523c4cd7f_3086_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;180&#34;
+		data-flex-basis=&#34;432px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;After the installation is complete, you can unplug the U disk. If you do not enter the system, you can check the boot sequence.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.linsnow.cn/en/p/android-tv/atvrun.jpg&#34;
+	width=&#34;600&#34;
+	height=&#34;333&#34;
+	srcset=&#34;https://blog.linsnow.cn/en/p/android-tv/atvrun_hu5a1e1e4613d632dca8b40df32f877c09_4678_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/p/android-tv/atvrun_hu5a1e1e4613d632dca8b40df32f877c09_4678_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;180&#34;
+		data-flex-basis=&#34;432px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;note-after-installation&#34;&gt;🙌Note after installation：&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Skip the Paypal QR code interface&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1：press Ctrl+alt+F1&lt;/p&gt;
+&lt;p&gt;2：input&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; pm disable com.tosanthony.tv.networkprovider
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;then  press (Enter)&lt;/p&gt;
+&lt;p&gt;3：Press Ctrl+alt+F7 or F8 back to Main interface&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Crude way of setting interface skipping auto-update and google login:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1.press Ctrl+alt+F1 to enter Console
+2.input&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pm disable com.google.android.tungsten.setupwraith
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;3.press Enter
+4.Ctrl+alt+F7 ，（If your home network is already patriotic, you don&amp;rsquo;t have to skip Google login.）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How to install software with adb?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Download the application to the U disk, insert the U disk&lt;/li&gt;
+&lt;li&gt;Press Ctrl+Alt+F1 to enter the console,&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;cd storage&lt;/code&gt;, then press Enter,&lt;/li&gt;
+&lt;li&gt;Enter ls again, and then press Enter. Generally, the first name displayed is the name of your U disk.&lt;/li&gt;
+&lt;li&gt;Enter &lt;code&gt;cd your u disk name&lt;/code&gt;, you can enter the first few letters of the u disk name and then press the tab key to automatically complete&lt;/li&gt;
+&lt;li&gt;Enter ls again and press Enter to find the apk installation package according to your U disk directory&lt;/li&gt;
+&lt;li&gt;Use the cp command to copy the apk to the /data/local/tmp directory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;E.g&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp bilibili.apk （Note that there is a space）/data/local/tmp/bilibili.apk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Enter the tmp directory and enter cd /data/local/tmp&lt;/p&gt;
+&lt;p&gt;Install apk, enter pm install bilibili.apk and output Success indicates successful installation&lt;/p&gt;
+&lt;p&gt;Press Ctrl+alt+F7 to return to the main interface&lt;/p&gt;
+&lt;p&gt;It is recommended to install Dangbei Market for the first software, because you can directly download and install many commonly used software in the back without entering the code.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Enable arm compatibility&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download the corresponding houdini file, houdini9_y.sfs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Copy to U disk&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Press Ctrl+Alt+F1 to enter the console and save the file in the storage/.. directory&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter the same as above, enter ls&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find the storage directory, enter cd U disk name to enter your U disk, enter ls, and check whether the houdini9_y.sfs file you copied is in the current directory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp houdini9_y.sfs /system/etc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;and press enter&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Enter&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;enable_nativebridge
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;and press enter&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Enter&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;and press enter&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Remote control:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After installing the Wukong remote control for AndroidTV, you can use your mobile phone as a remote control, or buy a usb remote control for about ten yuan&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;android-tv-x86-experience&#34;&gt;🎈Android TV x86 experience:&lt;/h2&gt;
+&lt;p&gt;Although it can only be 1080p, the display is still very clear. It also supports Google services, but it can&amp;rsquo;t use Netflix. It is very comfortable to use in general&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;android-tv-x86-resource-and-link-summary&#34;&gt;🎈Android TV x86 resource and link summary:&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In order to get rid of the speed limit of Baidu network disk, I transferred the file to Alibaba cloud disk, and changed the suffix to mp4, so after downloading it, I can change it to iso, and the downloaded houdini9_y.mp4 should be renamed to houdini9_y.sfs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;AndroidTV mirror file link:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://www.aliyundrive.com/s/oPYD7AHJJc3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Rufus burning software link:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://github.com/pbatard/rufus/releases/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Dangbei Market Link:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://www.dangbei.com/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;houdini9_y.sfs download:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://www.aliyundrive.com/s/oPYD7AHJJc3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;discord group:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://discord.gg/yUwdq8x 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

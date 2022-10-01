@@ -1,108 +1,1116 @@
-<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="（六）CSS 高级 1.1 精灵图 一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请"><title>（六）CSS高级</title><link rel=canonical href=https://blog.linsnow.cn/p/css-six/><link rel=stylesheet href=/scss/style.min.9c5d46987745d80244a5677bdc16442c6b4821a1ac549ffda487c42e72a6d6f4.css><meta property="og:title" content="（六）CSS高级"><meta property="og:description" content="（六）CSS 高级 1.1 精灵图 一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请"><meta property="og:url" content="https://blog.linsnow.cn/p/css-six/"><meta property="og:site_name" content="L1nSn0w's Blog"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="css"><meta property="article:published_time" content="2021-06-28T18:13:35+08:00"><meta property="article:modified_time" content="2021-06-28T18:13:35+08:00"><meta property="og:image" content="https://blog.linsnow.cn/p/css-six/css.png"><meta name=twitter:site content="@Sn0w_L1n"><meta name=twitter:creator content="@Sn0w_L1n"><meta name=twitter:title content="（六）CSS高级"><meta name=twitter:description content="（六）CSS 高级 1.1 精灵图 一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.linsnow.cn/p/css-six/css.png"><link rel="shortcut icon" href=img/avatar.png><script async src="https://www.googletagmanager.com/gtag/js?id=G-3WFJDHZ5LZ"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3WFJDHZ5LZ",{anonymize_ip:!1})}</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
-<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_huc4ee539f708b3764d0a4718d2170118a_9562_300x0_resize_box_3.png width=300 height=300 class=site-logo loading=lazy alt=Avatar></a>
-<span class=emoji>🍥</span></figure><div class=site-meta><h1 class=site-name><a href=/>L1nSn0w's Blog</a></h1><h2 class=site-description>无限进步.✍️</h2></div></header><ol class=social-menu><li><a href=/links title=afriend><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg></a></li><li><a href=/log title=bLog><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg></a></li><li><a href=/index.xml target=_blank title=cRSS><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li><li><a href=https://github.com/lin-snow target=_blank title=dGitHub><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://twitter.com/Sn0w_L1n target=_blank title=eTwitter><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li><li><a href=https://www.facebook.com/l1nsn0w/ target=_blank title=Facebook><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 011-1h3V3h-3a5 5 0 00-5 5v2H7"/></svg></a></li><li><a href=https://www.instagram.com/l1nsn0w/ target=_blank title=Instagram><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3"/><line x1="16.5" y1="7.5" x2="16.5" y2="7.501"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>主页</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>归档</span></a></li><li><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alien" width="80" height="80" viewBox="0 0 24 24" stroke-width="2" stroke="#ff9300" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 17a2.5 2.5.0 002 0"/><path d="M12 3C7.336 3 4.604 5.331 4.138 8.595a11.816 11.816.0 002 8.592 10.777 10.777.0 003.199 3.064c1.666 1 3.664 1 5.33.0a10.777 10.777.0 003.199-3.064 11.89 11.89.0 002-8.592C19.4 5.33 16.668 3 12.004 3z"/><line x1="8" y1="11" x2="10" y2="13"/><line x1="16" y1="11" x2="14" y2="13"/></svg><span>关于</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>搜索</span></a></li><li><a href=/links/><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="#fff" fill-opacity=".01"/><path d="M24 44c11.0457.0 20-8.9543 20-20C44 12.9543 35.0457 4 24 4 12.9543 4 4 12.9543 4 24s8.9543 20 20 20z" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M31 7V24 7z" fill="none"/><path d="M31 7V24" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.636 6.63605 30.7781 20.7782 16.636 6.63605z" fill="none"/><path d="M16.636 6.63605 30.7781 20.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7 17H24 7z" fill="none"/><path d="M7 17H24" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M20.364 17.636 6.22188 31.7782 20.364 17.636z" fill="none"/><path d="M20.364 17.636 6.22188 31.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17 25V42 25z" fill="none"/><path d="M17 25V42" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.636 27.636 31.7781 41.7782 17.636 27.636z" fill="none"/><path d="M17.636 27.636 31.7781 41.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24 31H42 24z" fill="none"/><path d="M24 31H42" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M42.364 16.636 28.2219 30.7782 42.364 16.636z" fill="none"/><path d="M42.364 16.636 28.2219 30.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 31c3.866.0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z" fill="none" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>友链</span></a></li><li><a href=/nav/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-package" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"/><line x1="12" y1="12" x2="20" y2="7.5"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="12" y1="12" x2="4" y2="7.5"/><line x1="16" y1="5.25" x2="8" y2="9.75"/></svg><span>导航</span></a></li><div class=menu-bottom-section><li id=i18n-switch><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><select name=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://blog.linsnow.cn/ selected>中文</option><option value=https://blog.linsnow.cn/en/>English</option></select></li><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>暗色模式</span></li></div></ol></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/css-six/><img src=/p/css-six/css_hu19bf36480724bf850c7b8208b65febaf_13270_800x0_resize_box_3.png srcset="/p/css-six/css_hu19bf36480724bf850c7b8208b65febaf_13270_800x0_resize_box_3.png 800w, /p/css-six/css_hu19bf36480724bf850c7b8208b65febaf_13270_1600x0_resize_box_3.png 1600w" width=800 height=500 loading=lazy alt="Featured image of post （六）CSS高级"></a></div><div class=article-details><header class=article-category><a href=/categories/css/>CSS笔记</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/css-six/>（六）CSS高级</a></h2></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Jun 28, 2021</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>阅读时长: 4 分钟</time></div></footer></div></header><section class=article-content><h1 id=六css-高级>（六）CSS 高级</h1><h2 id=11-精灵图>1.1 精灵图</h2><p>一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请求压力过大，这将大大降低页面的加载速度。</p><p>因此，为了有效地减少服务器接收和发送请求的次数，提高页面的加载速度，出现了 CSS 精灵技术（也称 CSS Sprites. CSS 雪碧）。</p><h2 id=12-精灵图的使用>1.2 精灵图的使用</h2><p>使用精灵图核心总结：</p><ol><li>精灵图主要针对于小的背景图片使用。</li><li>主要借助于背景位置来实现———background—position.</li><li>一般情况下精灵图都是负值。（千万注意网页中的坐标： x 轴右边走是正值，左边走是负值， y 轴同理。）</li></ol><h2 id=21-字体图标的产生>2.1 字体图标的产生</h2><p>字体图标使用场景：主要用于显示网页中通用、常用的一些小图标精灵图是有诸多优点的，但是缺点很明显。</p><ol><li>图片文件还是比较大的。</li><li>图片本身放大和缩小会失真。</li><li>一旦图片制作完毕想要更换非常复杂。 此时，有一种技术的出现很好的解决了以上问题，就是==字体图标 iconfont== 字体图标可以为前端工程师提供一种方便高效的图标使用方式，==展示的是图标，本质属于字体。==</li></ol><h2 id=22-字体图标的优点>2.2 字体图标的优点</h2><p>轻量级：一个图标字体要比一系列的图像要小。一旦字体加载了，图标就会马上渲染出来，减少了服务器请求灵活性：本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果、旋转等</p><p>兼容性：几乎支持所有的浏览器，请放心使用 注意：字体图标不能替代精灵技术，只是对工作中图标部分技术的提升和优化。</p><p>总结：</p><ol><li>如果遇到一些结构和样式比较简单的小图标，就用字体图标。</li><li>如果遇到一些结构和样式复杂一点的小图片，就用精灵图。</li></ol><h2 id=23-字体图标的下载>2.3 字体图标的下载</h2><p>推荐下载网站： icomoon 字库 <a class=link href=http://icomoon.io/ target=_blank rel=noopener>http://icomoon.io</a></p><p>IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，它允许用户选择所需要的图标，使它们成一字型。该字库内容种类繁多，非常全面，唯一的遗憾是国外服务器，打开网速较慢。</p><p>阿里 iconfont 字库 <a class=link href=http://www.iconfont.cn/ target=_blank rel=noopener>http://www.iconfont.cn</a> 这个是阿里妈妈 M2UX 的一个 iconfont 字体图标字库，包含了淘宝图标库和阿里妈妈图标库。可以使用 Al 制作图标上传生成。重点是，免费！</p><h3 id=24-iconmoon-字体图标使用方法>2.4 IconMoon 字体图标使用方法</h3><ol><li><p>选择字体并下载</p></li><li><p>将下载文件中的 fonts 文件夹复制到项目根目录下</p></li><li><p>字体声明，将 <code>style.css</code> 文件中的开头的字体声明代码赋值到 html 中</p></li><li><p>给</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>span
-</span></span></code></pre></td></tr></table></div></div><p>声明字体：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>span</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>font-family</span><span class=p>:</span> <span class=s2>&#34;icomoon&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div></li><li><p>打开 <code>demo.html</code>，复制页面中的方框图标到 html 代码中即可。</p></li></ol><p>如何更新/添加字体图标？</p><p>上传 <code>selections.json</code>，添加字体图标，重新生成。下载，更换 <code>@font-face</code> 内容。</p><h2 id=3-css-三角图形>3. CSS 三角图形</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>box1</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>width</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=k>height</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=k>border</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>transparent</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=k>border-left-color</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=c>/* 照顾兼容性 */</span>
-</span></span><span class=line><span class=cl>  <span class=k>line-height</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=k>font-size</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=4-css-用户界面样式>4. CSS 用户界面样式</h2><h3 id=41-鼠标样式-cursor>4.1 鼠标样式 cursor</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>cursor</span><span class=o>:</span> <span class=nt>default</span> <span class=o>|</span> <span class=nt>pointer</span> <span class=o>|</span> <span class=nt>move</span> <span class=o>|</span> <span class=nt>text</span> <span class=o>|</span> <span class=nt>not-allowed</span><span class=o>;</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=42-取消表单轮廓和文本域缩放>4.2 取消表单轮廓和文本域缩放</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>input</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>outline</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=nt>textarea</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>outline</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=k>resize</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=5-vertical-align-的应用>5. vertical-align 的应用</h2><p><code>vertical-align</code> 指定行内/行内块元素的元素的垂直对齐方式。</p><h3 id=51-图片表单和文字对齐-vertical-align>5.1 图片、表单和文字对齐 vertical-align</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>img</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>vertical-align</span><span class=p>:</span> <span class=kc>middle</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=nt>li</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=n>disaplay</span><span class=p>:</span> <span class=kc>inline-block</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=k>vertical-align</span><span class=p>:</span> <span class=kc>middle</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=52-解决图片底部默认空白缝隙问题>5.2 解决图片底部默认空白缝隙问题</h2><p>bug ：图片底侧会有一个空白缝隙，==原因是行内块元素会和文字的基线对齐。==主要解决方法有两种：</p><ol><li>给图片添加 <code>vertical—align: middle topl bottom;</code> 等。（提倡使用的）</li><li>把图片转换为块级元素 <code>display: block；</code></li></ol><h2 id=6-溢出的文字省略号显示>6. 溢出的文字省略号显示</h2><h3 id=61-单行文本溢出显示省略号必须满足三个条件>6.1 单行文本溢出显示省略号—必须满足三个条件</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/*1·先强制一行内显示文本*/</span>
-</span></span><span class=line><span class=cl><span class=nt>white-space</span><span class=o>:</span> <span class=nt>nowrap</span><span class=o>;</span>
-</span></span><span class=line><span class=cl><span class=nt>默认normal</span> <span class=nt>自动换行</span><span class=err>）</span>
-</span></span><span class=line><span class=cl><span class=c>/*2·超出的部分隐藏*/</span>
-</span></span><span class=line><span class=cl><span class=nt>overflow</span><span class=o>:</span> <span class=nt>hidden</span><span class=o>;</span>
-</span></span><span class=line><span class=cl><span class=c>/*3.文字用省略号替代超出的部分*/</span>
-</span></span><span class=line><span class=cl><span class=nt>text-overflow</span><span class=o>:</span> <span class=nt>ellipsis</span><span class=o>;</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=7-margin-负值巧妙利用>7. margin 负值巧妙利用</h2><ol><li>解决并排盒子之间的边框宽度加倍问题。 原理：让每个盒子压住前面的盒子，边框叠加。</li><li>鼠标移动边框颜色变化效果。</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/*如果盒子没有定位，则鼠标经过添加相对定位即可*/</span>
-</span></span><span class=line><span class=cl><span class=nt>ul</span> <span class=nt>li</span><span class=p>:</span><span class=nd>hover</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=k>border</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>orange</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=c>/*若li都有定位，则使用 z-index 提高层级*/</span>
-</span></span><span class=line><span class=cl><span class=nt>ul</span> <span class=nt>li</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>z-index</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=k>border</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>orange</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=8-文字围绕浮动元素巧妙运用>8. 文字围绕浮动元素巧妙运用</h2><p>原理：浮动元素不会遮住文字。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>div</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>float</span><span class=p>:</span> <span class=kc>left</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=9-行内块元素巧妙运用>9. 行内块元素巧妙运用</h2><p>行内块元素布局当前页码和 <code>pre</code>，<code>next</code>盒子，使用 <code>text-align: center</code> 居中。</p><h2 id=10-css-初始化>10. CSS 初始化</h2><p>不同浏览器对有些标签的默认值是不同的，为了消除不同浏览器对 HTML 文本呈现的差异，照顾浏览器的兼容，我们需要对 CSS 初始化</p><p>简单理解： CSS 初始化是指重设浏览器的样式。（也称为 CSS reset ）每个网页都必须首先进行 CSS 初始化。 这里我们以京东 css 初始化代码为例。</p><p>Unicode 编码字体： 把中文字体的名称用相应的 Unicode 编码来代替，这样就可以有效的避免浏览器解释 CSS 代码时候出现乱码的问题。</p><p>比如： 黑体：<code>\9ED1\4F53</code> 宋体：<code>\5B8B\4F53</code> 微软雅黑：<code>\5FAE\8F6F196C519ED1</code></p></section><footer class=article-footer><section class=article-tags><a href=/tags/css/>css</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/p/css-five/><div class=article-image><img src=/p/css-five/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （五）CSS定位" data-key=css-five data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg=="></div><div class=article-details><h2 class=article-title>（五）CSS定位</h2></div></a></article><article class=has-image><a href=/p/css-four/><div class=article-image><img src=/p/css-four/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （四）CSS浮动" data-key=css-four data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg=="></div><div class=article-details><h2 class=article-title>（四）CSS浮动</h2></div></a></article><article class=has-image><a href=/p/css-three/><div class=article-image><img src=/p/css-three/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （三）CSS之盒子模型" data-key=css-three data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg=="></div><div class=article-details><h2 class=article-title>（三）CSS之盒子模型</h2></div></a></article><article class=has-image><a href=/p/css-two/><div class=article-image><img src=/p/css-two/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （二）CSS复合选择器与特性" data-key=css-two data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg=="></div><div class=article-details><h2 class=article-title>（二）CSS复合选择器与特性</h2></div></a></article><article class=has-image><a href=/p/css-one/><div class=article-image><img src=/p/css-one/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （一）CSS简介与基础选择器" data-key=css-one data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg=="></div><div class=article-details><h2 class=article-title>（一）CSS简介与基础选择器</h2></div></a></article></div></div></aside><script src=//cdn.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js></script><div id=tcomment></div><style>.twikoo{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}:root[data-scheme=dark]{--twikoo-body-text-color-main:rgba(255, 255, 255, 0.9);--twikoo-body-text-color:rgba(255, 255, 255, 0.7)}.twikoo .el-input-group__prepend,.twikoo .tk-action-icon,.twikoo .tk-time,.twikoo .tk-comments-count{color:var(--twikoo-body-text-color)}.twikoo .el-input__inner,.twikoo .el-textarea__inner,.twikoo .tk-preview-container,.twikoo .tk-content,.twikoo .tk-nick,.twikoo .tk-send{color:var(--twikoo-body-text-color-main)}.twikoo .el-button{color:var(--twikoo-body-text-color)!important}.OwO .OwO-body{background-color:var(--body-background)!important;color:var(--body-text-color)!important}</style><script>twikoo.init({envId:"https://my-twikoo-nu.vercel.app/",el:"#tcomment"})</script><footer class=site-footer><section class=copyright>&copy;
-2020 -
-2022 L1nSn0w's Blog</section><section class=powerby>Powered by GitHub.Pages<br>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.13.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-<button class="pswp__button pswp__button--share" title=Share></button>
-<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main><aside class="sidebar right-sidebar sticky"><div class=announce><p><strong style=color:#e99312>📢State：</strong><br>Slowly Update .😓</p></div><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#六css-高级>（六）CSS 高级</a><ol><li><a href=#11-精灵图>1.1 精灵图</a></li><li><a href=#12-精灵图的使用>1.2 精灵图的使用</a></li><li><a href=#21-字体图标的产生>2.1 字体图标的产生</a></li><li><a href=#22-字体图标的优点>2.2 字体图标的优点</a></li><li><a href=#23-字体图标的下载>2.3 字体图标的下载</a><ol><li><a href=#24-iconmoon-字体图标使用方法>2.4 IconMoon 字体图标使用方法</a></li></ol></li><li><a href=#3-css-三角图形>3. CSS 三角图形</a></li><li><a href=#4-css-用户界面样式>4. CSS 用户界面样式</a><ol><li><a href=#41-鼠标样式-cursor>4.1 鼠标样式 cursor</a></li><li><a href=#42-取消表单轮廓和文本域缩放>4.2 取消表单轮廓和文本域缩放</a></li></ol></li><li><a href=#5-vertical-align-的应用>5. vertical-align 的应用</a><ol><li><a href=#51-图片表单和文字对齐-vertical-align>5.1 图片、表单和文字对齐 vertical-align</a></li></ol></li><li><a href=#52-解决图片底部默认空白缝隙问题>5.2 解决图片底部默认空白缝隙问题</a></li><li><a href=#6-溢出的文字省略号显示>6. 溢出的文字省略号显示</a><ol><li><a href=#61-单行文本溢出显示省略号必须满足三个条件>6.1 单行文本溢出显示省略号—必须满足三个条件</a></li></ol></li><li><a href=#7-margin-负值巧妙利用>7. margin 负值巧妙利用</a></li><li><a href=#8-文字围绕浮动元素巧妙运用>8. 文字围绕浮动元素巧妙运用</a></li><li><a href=#9-行内块元素巧妙运用>9. 行内块元素巧妙运用</a></li><li><a href=#10-css-初始化>10. CSS 初始化</a></li></ol></li></ol></nav></div></section></aside></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
-<script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script src=https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js integrity=sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg crossorigin=anonymous></script>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css integrity=sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE crossorigin=anonymous><script>NProgress.start(),document.addEventListener("readystatechange",()=>{document.readyState==="interactive"&&NProgress.inc(.8),document.readyState==="complete"&&NProgress.done()})</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='（六）CSS 高级 1.1 精灵图 一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请'><title>（六）CSS高级</title>
+
+<link rel='canonical' href='https://blog.linsnow.cn/p/css-six/'>
+
+<link rel="stylesheet" href="/scss/style.min.9c5d46987745d80244a5677bdc16442c6b4821a1ac549ffda487c42e72a6d6f4.css"><meta property='og:title' content='（六）CSS高级'>
+<meta property='og:description' content='（六）CSS 高级 1.1 精灵图 一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请'>
+<meta property='og:url' content='https://blog.linsnow.cn/p/css-six/'>
+<meta property='og:site_name' content='L1nSn0w&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='css' /><meta property='article:published_time' content='2021-06-28T18:13:35&#43;08:00'/><meta property='article:modified_time' content='2021-06-28T18:13:35&#43;08:00'/><meta property='og:image' content='https://blog.linsnow.cn/p/css-six/css.png' />
+<meta name="twitter:site" content="@Sn0w_L1n">
+    <meta name="twitter:creator" content="@Sn0w_L1n"><meta name="twitter:title" content="（六）CSS高级">
+<meta name="twitter:description" content="（六）CSS 高级 1.1 精灵图 一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.linsnow.cn/p/css-six/css.png' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3WFJDHZ5LZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3WFJDHZ5LZ', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huc4ee539f708b3764d0a4718d2170118a_9562_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">L1nSn0w&#39;s Blog</a></h1>
+            <h2 class="site-description">无限进步.✍️</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='/links'
+                        
+                        title="afriend"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/log'
+                        
+                        title="bLog"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/index.xml'
+                        target="_blank"
+                        title="cRSS"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/lin-snow'
+                        target="_blank"
+                        title="dGitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/Sn0w_L1n'
+                        target="_blank"
+                        title="eTwitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.facebook.com/l1nsn0w/'
+                        target="_blank"
+                        title="Facebook"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.instagram.com/l1nsn0w/'
+                        target="_blank"
+                        title="Instagram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alien" width="80" height="80" viewBox="0 0 24 24" stroke-width="2" stroke="#ff9300" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M11 17a2.5 2.5 0 0 0 2 0" />
+  <path d="M12 3c-4.664 0 -7.396 2.331 -7.862 5.595a11.816 11.816 0 0 0 2 8.592a10.777 10.777 0 0 0 3.199 3.064c1.666 1 3.664 1 5.33 0a10.777 10.777 0 0 0 3.199 -3.064a11.89 11.89 0 0 0 2 -8.592c-.466 -3.265 -3.198 -5.595 -7.862 -5.595z" />
+  <line x1="8" y1="11" x2="10" y2="13" />
+  <line x1="16" y1="11" x2="14" y2="13" />
+</svg>
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <?xml version="1.0" encoding="UTF-8"?><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M31 7V24V7Z" fill="none"/><path d="M31 7V24" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.636 6.63605L30.7781 20.7782L16.636 6.63605Z" fill="none"/><path d="M16.636 6.63605L30.7781 20.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7 17H24H7Z" fill="none"/><path d="M7 17H24" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M20.364 17.636L6.22188 31.7782L20.364 17.636Z" fill="none"/><path d="M20.364 17.636L6.22188 31.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17 25V42V25Z" fill="none"/><path d="M17 25V42" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.636 27.636L31.7781 41.7782L17.636 27.636Z" fill="none"/><path d="M17.636 27.636L31.7781 41.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24 31L42 31L24 31Z" fill="none"/><path d="M24 31L42 31" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M42.364 16.636L28.2219 30.7782L42.364 16.636Z" fill="none"/><path d="M42.364 16.636L28.2219 30.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z" fill="none" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/nav/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-package" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+  <line x1="12" y1="12" x2="20" y2="7.5" />
+  <line x1="12" y1="12" x2="12" y2="21" />
+  <line x1="12" y1="12" x2="4" y2="7.5" />
+  <line x1="16" y1="5.25" x2="8" y2="9.75" />
+</svg>
+                
+                <span>导航</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://blog.linsnow.cn/" selected>中文</option>
+                        
+                            <option value="https://blog.linsnow.cn/en/" >English</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/css-six/">
+                <img src="/p/css-six/css_hu19bf36480724bf850c7b8208b65febaf_13270_800x0_resize_box_3.png"
+                        srcset="/p/css-six/css_hu19bf36480724bf850c7b8208b65febaf_13270_800x0_resize_box_3.png 800w, /p/css-six/css_hu19bf36480724bf850c7b8208b65febaf_13270_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="500" 
+                        loading="lazy"
+                        alt="Featured image of post （六）CSS高级" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/css/" >
+                CSS笔记
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/css-six/">（六）CSS高级</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 28, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="六css-高级">（六）CSS 高级</h1>
+<h2 id="11-精灵图">1.1 精灵图</h2>
+<p>一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请求压力过大，这将大大降低页面的加载速度。</p>
+<p>因此，为了有效地减少服务器接收和发送请求的次数，提高页面的加载速度，出现了 CSS 精灵技术（也称 CSS Sprites. CSS 雪碧）。</p>
+<h2 id="12-精灵图的使用">1.2 精灵图的使用</h2>
+<p>使用精灵图核心总结：</p>
+<ol>
+<li>精灵图主要针对于小的背景图片使用。</li>
+<li>主要借助于背景位置来实现———background—position.</li>
+<li>一般情况下精灵图都是负值。（千万注意网页中的坐标： x 轴右边走是正值，左边走是负值， y 轴同理。）</li>
+</ol>
+<h2 id="21-字体图标的产生">2.1 字体图标的产生</h2>
+<p>字体图标使用场景：主要用于显示网页中通用、常用的一些小图标精灵图是有诸多优点的，但是缺点很明显。</p>
+<ol>
+<li>图片文件还是比较大的。</li>
+<li>图片本身放大和缩小会失真。</li>
+<li>一旦图片制作完毕想要更换非常复杂。 此时，有一种技术的出现很好的解决了以上问题，就是==字体图标 iconfont== 字体图标可以为前端工程师提供一种方便高效的图标使用方式，==展示的是图标，本质属于字体。==</li>
+</ol>
+<h2 id="22-字体图标的优点">2.2 字体图标的优点</h2>
+<p>轻量级：一个图标字体要比一系列的图像要小。一旦字体加载了，图标就会马上渲染出来，减少了服务器请求灵活性：本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果、旋转等</p>
+<p>兼容性：几乎支持所有的浏览器，请放心使用 注意：字体图标不能替代精灵技术，只是对工作中图标部分技术的提升和优化。</p>
+<p>总结：</p>
+<ol>
+<li>如果遇到一些结构和样式比较简单的小图标，就用字体图标。</li>
+<li>如果遇到一些结构和样式复杂一点的小图片，就用精灵图。</li>
+</ol>
+<h2 id="23-字体图标的下载">2.3 字体图标的下载</h2>
+<p>推荐下载网站： icomoon 字库 <a class="link" href="http://icomoon.io/"  target="_blank" rel="noopener"
+    >http://icomoon.io</a></p>
+<p>IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，它允许用户选择所需要的图标，使它们成一字型。该字库内容种类繁多，非常全面，唯一的遗憾是国外服务器，打开网速较慢。</p>
+<p>阿里 iconfont 字库 <a class="link" href="http://www.iconfont.cn/"  target="_blank" rel="noopener"
+    >http://www.iconfont.cn</a> 这个是阿里妈妈 M2UX 的一个 iconfont 字体图标字库，包含了淘宝图标库和阿里妈妈图标库。可以使用 Al 制作图标上传生成。重点是，免费！</p>
+<h3 id="24-iconmoon-字体图标使用方法">2.4 IconMoon 字体图标使用方法</h3>
+<ol>
+<li>
+<p>选择字体并下载</p>
+</li>
+<li>
+<p>将下载文件中的 fonts 文件夹复制到项目根目录下</p>
+</li>
+<li>
+<p>字体声明，将 <code>style.css</code> 文件中的开头的字体声明代码赋值到 html 中</p>
+</li>
+<li>
+<p>给</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">span
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>声明字体：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">span</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;icomoon&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>打开 <code>demo.html</code>，复制页面中的方框图标到 html 代码中即可。</p>
+</li>
+</ol>
+<p>如何更新/添加字体图标？</p>
+<p>上传 <code>selections.json</code>，添加字体图标，重新生成。下载，更换 <code>@font-face</code> 内容。</p>
+<h2 id="3-css-三角图形">3. CSS 三角图形</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">box1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">transparent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-left-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* 照顾兼容性 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">line-height</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-size</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-css-用户界面样式">4. CSS 用户界面样式</h2>
+<h3 id="41-鼠标样式-cursor">4.1 鼠标样式 cursor</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">cursor</span><span class="o">:</span> <span class="nt">default</span> <span class="o">|</span> <span class="nt">pointer</span> <span class="o">|</span> <span class="nt">move</span> <span class="o">|</span> <span class="nt">text</span> <span class="o">|</span> <span class="nt">not-allowed</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="42-取消表单轮廓和文本域缩放">4.2 取消表单轮廓和文本域缩放</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">input</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">outline</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nt">textarea</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">outline</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">resize</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5-vertical-align-的应用">5. vertical-align 的应用</h2>
+<p><code>vertical-align</code> 指定行内/行内块元素的元素的垂直对齐方式。</p>
+<h3 id="51-图片表单和文字对齐-vertical-align">5.1 图片、表单和文字对齐 vertical-align</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">img</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">vertical-align</span><span class="p">:</span> <span class="kc">middle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nt">li</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">disaplay</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">vertical-align</span><span class="p">:</span> <span class="kc">middle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="52-解决图片底部默认空白缝隙问题">5.2 解决图片底部默认空白缝隙问题</h2>
+<p>bug ：图片底侧会有一个空白缝隙，==原因是行内块元素会和文字的基线对齐。==主要解决方法有两种：</p>
+<ol>
+<li>给图片添加 <code>vertical—align: middle topl bottom;</code> 等。（提倡使用的）</li>
+<li>把图片转换为块级元素 <code>display: block；</code></li>
+</ol>
+<h2 id="6-溢出的文字省略号显示">6. 溢出的文字省略号显示</h2>
+<h3 id="61-单行文本溢出显示省略号必须满足三个条件">6.1 单行文本溢出显示省略号—必须满足三个条件</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/*1·先强制一行内显示文本*/</span>
+</span></span><span class="line"><span class="cl"><span class="nt">white-space</span><span class="o">:</span> <span class="nt">nowrap</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">默认normal</span> <span class="nt">自动换行</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="c">/*2·超出的部分隐藏*/</span>
+</span></span><span class="line"><span class="cl"><span class="nt">overflow</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="c">/*3.文字用省略号替代超出的部分*/</span>
+</span></span><span class="line"><span class="cl"><span class="nt">text-overflow</span><span class="o">:</span> <span class="nt">ellipsis</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7-margin-负值巧妙利用">7. margin 负值巧妙利用</h2>
+<ol>
+<li>解决并排盒子之间的边框宽度加倍问题。 原理：让每个盒子压住前面的盒子，边框叠加。</li>
+<li>鼠标移动边框颜色变化效果。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/*如果盒子没有定位，则鼠标经过添加相对定位即可*/</span>
+</span></span><span class="line"><span class="cl"><span class="nt">ul</span> <span class="nt">li</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">orange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c">/*若li都有定位，则使用 z-index 提高层级*/</span>
+</span></span><span class="line"><span class="cl"><span class="nt">ul</span> <span class="nt">li</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">z-index</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">orange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="8-文字围绕浮动元素巧妙运用">8. 文字围绕浮动元素巧妙运用</h2>
+<p>原理：浮动元素不会遮住文字。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="9-行内块元素巧妙运用">9. 行内块元素巧妙运用</h2>
+<p>行内块元素布局当前页码和 <code>pre</code>，<code>next</code>盒子，使用 <code>text-align: center</code> 居中。</p>
+<h2 id="10-css-初始化">10. CSS 初始化</h2>
+<p>不同浏览器对有些标签的默认值是不同的，为了消除不同浏览器对 HTML 文本呈现的差异，照顾浏览器的兼容，我们需要对 CSS 初始化</p>
+<p>简单理解： CSS 初始化是指重设浏览器的样式。（也称为 CSS reset ）每个网页都必须首先进行 CSS 初始化。 这里我们以京东 css 初始化代码为例。</p>
+<p>Unicode 编码字体： 把中文字体的名称用相应的 Unicode 编码来代替，这样就可以有效的避免浏览器解释 CSS 代码时候出现乱码的问题。</p>
+<p>比如： 黑体：<code>\9ED1\4F53</code> 宋体：<code>\5B8B\4F53</code> 微软雅黑：<code>\5FAE\8F6F196C519ED1</code></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/css/">css</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/css-five/">
+        
+        
+            <div class="article-image">
+                <img src="/p/css-five/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （五）CSS定位"
+                        data-key="css-five" 
+                        data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（五）CSS定位</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/css-four/">
+        
+        
+            <div class="article-image">
+                <img src="/p/css-four/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （四）CSS浮动"
+                        data-key="css-four" 
+                        data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（四）CSS浮动</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/css-three/">
+        
+        
+            <div class="article-image">
+                <img src="/p/css-three/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （三）CSS之盒子模型"
+                        data-key="css-three" 
+                        data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（三）CSS之盒子模型</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/css-two/">
+        
+        
+            <div class="article-image">
+                <img src="/p/css-two/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （二）CSS复合选择器与特性"
+                        data-key="css-two" 
+                        data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（二）CSS复合选择器与特性</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/css-one/">
+        
+        
+            <div class="article-image">
+                <img src="/p/css-one/css.afcb73442bf0af5c6e09cb98d98d5d1e_hu19bf36480724bf850c7b8208b65febaf_13270_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （一）CSS简介与基础选择器"
+                        data-key="css-one" 
+                        data-hash="md5-r8tzRCvwr1xuCcuY2Y1dHg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（一）CSS简介与基础选择器</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send {
+        color: var(--twikoo-body-text-color-main);
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: 'https:\/\/my-twikoo-nu.vercel.app\/',
+        el: '#tcomment',})
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 L1nSn0w&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+            Powered by GitHub.Pages <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        <div class="announce">
+            <p><strong style="color: #e99312;">📢State：</strong><br>
+                Slowly Update .😓            
+            </p>
+ 
+         </div>
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#六css-高级">（六）CSS 高级</a>
+      <ol>
+        <li><a href="#11-精灵图">1.1 精灵图</a></li>
+        <li><a href="#12-精灵图的使用">1.2 精灵图的使用</a></li>
+        <li><a href="#21-字体图标的产生">2.1 字体图标的产生</a></li>
+        <li><a href="#22-字体图标的优点">2.2 字体图标的优点</a></li>
+        <li><a href="#23-字体图标的下载">2.3 字体图标的下载</a>
+          <ol>
+            <li><a href="#24-iconmoon-字体图标使用方法">2.4 IconMoon 字体图标使用方法</a></li>
+          </ol>
+        </li>
+        <li><a href="#3-css-三角图形">3. CSS 三角图形</a></li>
+        <li><a href="#4-css-用户界面样式">4. CSS 用户界面样式</a>
+          <ol>
+            <li><a href="#41-鼠标样式-cursor">4.1 鼠标样式 cursor</a></li>
+            <li><a href="#42-取消表单轮廓和文本域缩放">4.2 取消表单轮廓和文本域缩放</a></li>
+          </ol>
+        </li>
+        <li><a href="#5-vertical-align-的应用">5. vertical-align 的应用</a>
+          <ol>
+            <li><a href="#51-图片表单和文字对齐-vertical-align">5.1 图片、表单和文字对齐 vertical-align</a></li>
+          </ol>
+        </li>
+        <li><a href="#52-解决图片底部默认空白缝隙问题">5.2 解决图片底部默认空白缝隙问题</a></li>
+        <li><a href="#6-溢出的文字省略号显示">6. 溢出的文字省略号显示</a>
+          <ol>
+            <li><a href="#61-单行文本溢出显示省略号必须满足三个条件">6.1 单行文本溢出显示省略号—必须满足三个条件</a></li>
+          </ol>
+        </li>
+        <li><a href="#7-margin-负值巧妙利用">7. margin 负值巧妙利用</a></li>
+        <li><a href="#8-文字围绕浮动元素巧妙运用">8. 文字围绕浮动元素巧妙运用</a></li>
+        <li><a href="#9-行内块元素巧妙运用">9. 行内块元素巧妙运用</a></li>
+        <li><a href="#10-css-初始化">10. CSS 初始化</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js"
+    integrity="sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg"
+    crossorigin="anonymous"
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css"
+    integrity="sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE"
+    crossorigin="anonymous"
+/>
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+
+    </body>
+</html>

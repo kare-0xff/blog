@@ -1,147 +1,1346 @@
-<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="（三）数据类型 1. 数据类型概述 1.1 为什么需要数据类型 在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，"><title>（三）JavaScript数据类型</title><link rel=canonical href=https://blog.linsnow.cn/p/js-three/><link rel=stylesheet href=/scss/style.min.9c5d46987745d80244a5677bdc16442c6b4821a1ac549ffda487c42e72a6d6f4.css><meta property="og:title" content="（三）JavaScript数据类型"><meta property="og:description" content="（三）数据类型 1. 数据类型概述 1.1 为什么需要数据类型 在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，"><meta property="og:url" content="https://blog.linsnow.cn/p/js-three/"><meta property="og:site_name" content="L1nSn0w's Blog"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="javascript"><meta property="article:published_time" content="2021-06-28T19:23:22+08:00"><meta property="article:modified_time" content="2021-06-28T19:23:22+08:00"><meta property="og:image" content="https://blog.linsnow.cn/p/js-three/javascript.png"><meta name=twitter:site content="@Sn0w_L1n"><meta name=twitter:creator content="@Sn0w_L1n"><meta name=twitter:title content="（三）JavaScript数据类型"><meta name=twitter:description content="（三）数据类型 1. 数据类型概述 1.1 为什么需要数据类型 在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blog.linsnow.cn/p/js-three/javascript.png"><link rel="shortcut icon" href=img/avatar.png><script async src="https://www.googletagmanager.com/gtag/js?id=G-3WFJDHZ5LZ"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-3WFJDHZ5LZ",{anonymize_ip:!1})}</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
-<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_huc4ee539f708b3764d0a4718d2170118a_9562_300x0_resize_box_3.png width=300 height=300 class=site-logo loading=lazy alt=Avatar></a>
-<span class=emoji>🍥</span></figure><div class=site-meta><h1 class=site-name><a href=/>L1nSn0w's Blog</a></h1><h2 class=site-description>无限进步.✍️</h2></div></header><ol class=social-menu><li><a href=/links title=afriend><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg></a></li><li><a href=/log title=bLog><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg></a></li><li><a href=/index.xml target=_blank title=cRSS><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg></a></li><li><a href=https://github.com/lin-snow target=_blank title=dGitHub><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://twitter.com/Sn0w_L1n target=_blank title=eTwitter><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li><li><a href=https://www.facebook.com/l1nsn0w/ target=_blank title=Facebook><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 011-1h3V3h-3a5 5 0 00-5 5v2H7"/></svg></a></li><li><a href=https://www.instagram.com/l1nsn0w/ target=_blank title=Instagram><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3"/><line x1="16.5" y1="7.5" x2="16.5" y2="7.501"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>主页</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>归档</span></a></li><li><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alien" width="80" height="80" viewBox="0 0 24 24" stroke-width="2" stroke="#ff9300" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 17a2.5 2.5.0 002 0"/><path d="M12 3C7.336 3 4.604 5.331 4.138 8.595a11.816 11.816.0 002 8.592 10.777 10.777.0 003.199 3.064c1.666 1 3.664 1 5.33.0a10.777 10.777.0 003.199-3.064 11.89 11.89.0 002-8.592C19.4 5.33 16.668 3 12.004 3z"/><line x1="8" y1="11" x2="10" y2="13"/><line x1="16" y1="11" x2="14" y2="13"/></svg><span>关于</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>搜索</span></a></li><li><a href=/links/><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="#fff" fill-opacity=".01"/><path d="M24 44c11.0457.0 20-8.9543 20-20C44 12.9543 35.0457 4 24 4 12.9543 4 4 12.9543 4 24s8.9543 20 20 20z" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M31 7V24 7z" fill="none"/><path d="M31 7V24" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.636 6.63605 30.7781 20.7782 16.636 6.63605z" fill="none"/><path d="M16.636 6.63605 30.7781 20.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7 17H24 7z" fill="none"/><path d="M7 17H24" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M20.364 17.636 6.22188 31.7782 20.364 17.636z" fill="none"/><path d="M20.364 17.636 6.22188 31.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17 25V42 25z" fill="none"/><path d="M17 25V42" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.636 27.636 31.7781 41.7782 17.636 27.636z" fill="none"/><path d="M17.636 27.636 31.7781 41.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24 31H42 24z" fill="none"/><path d="M24 31H42" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M42.364 16.636 28.2219 30.7782 42.364 16.636z" fill="none"/><path d="M42.364 16.636 28.2219 30.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 31c3.866.0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z" fill="none" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>友链</span></a></li><li><a href=/nav/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-package" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"/><line x1="12" y1="12" x2="20" y2="7.5"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="12" y1="12" x2="4" y2="7.5"/><line x1="16" y1="5.25" x2="8" y2="9.75"/></svg><span>导航</span></a></li><div class=menu-bottom-section><li id=i18n-switch><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><select name=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://blog.linsnow.cn/ selected>中文</option><option value=https://blog.linsnow.cn/en/>English</option></select></li><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>暗色模式</span></li></div></ol></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/p/js-three/><img src=/p/js-three/javascript_hu51e240a209599e33f736637c547cd908_22418_800x0_resize_box_3.png srcset="/p/js-three/javascript_hu51e240a209599e33f736637c547cd908_22418_800x0_resize_box_3.png 800w, /p/js-three/javascript_hu51e240a209599e33f736637c547cd908_22418_1600x0_resize_box_3.png 1600w" width=800 height=500 loading=lazy alt="Featured image of post （三）JavaScript数据类型"></a></div><div class=article-details><header class=article-category><a href=/categories/javascript/>javascript笔记</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/js-three/>（三）JavaScript数据类型</a></h2></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Jun 28, 2021</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>阅读时长: 6 分钟</time></div></footer></div></header><section class=article-content><h1 id=三数据类型>（三）数据类型</h1><h2 id=1-数据类型概述>1. 数据类型概述</h2><h3 id=11-为什么需要数据类型>1.1 为什么需要数据类型</h3><p>在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，充分利用存储空间，于是定义了不同的数据类型。</p><p>简单来说，数据类型就是数据的类别型号。比如姓名“张三” ，年龄18，这些数据的类型是不一样的。</p><h3 id=12-变量的数据类型>1.2 变量的数据类型</h3><p>变量是用来存储值的所在处，它们有名字和数据类型。变量的数据类型决定了如何将代表这些值的位存储到计算机的内存中。==JavaScript是一种弱类型或者说动态语言==。这意味着不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>age</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=c1>//这是一个数字型var arerouok =的； //这是一个字符串
-</span></span></span></code></pre></td></tr></table></div></div><p>在代码运行时，变量的数据类型是由JS引擎根据=右边变量值的数据类型来判断的，运行完毕之后，变量就确定了数据类型
-JavaScript拥有动态类型，同时也意味着相同的变量可用作不同的类型：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>x</span> <span class=o>=</span> <span class=mi>6</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=c1>// x为数字
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>x</span> <span class=o>=</span> <span class=s2>&#34;Bill&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=c1>// x为字符串
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=2-简单数据类型>2. 简单数据类型</h2><h3 id=21-简单数据类型基本数据类型>2.1 简单数据类型（基本数据类型）</h3><p>JavaScript中的简单数据类型及其说明如下：</p><div class=table-wrapper><table><thead><tr><th>简单数据类型</th><th>说明</th><th>默认值</th></tr></thead><tbody><tr><td>Number</td><td>数字型，包含整值和浮点值，如21、0.21</td><td><code>0</code></td></tr><tr><td>Boolean</td><td>布尔值类型，如true、 false，等价于1和0</td><td><code>false</code></td></tr><tr><td>String</td><td>字符串类型，如“张三”注意js 里面，字符串都带引号</td><td><code>""</code></td></tr><tr><td>Undefined</td><td><code>var a;</code> 声明了变量a但是没有给值，此时a =undefinedNull</td><td><code>undefined</code></td></tr><tr><td>Null</td><td><code>var a = null;</code> 声明了变量a为空值</td><td><code>null</code></td></tr></tbody></table></div><h3 id=22-数字型-number>2.2 数字型 Number</h3><h4 id=1-数字型进制>1. 数字型进制</h4><p>常见：二进制、八进制、十进制、十六进制</p><ul><li><code>0123</code>: <code>0</code> 开头表示八进制</li><li><code>0b11</code>: <code>0b</code> 开头表示二进制</li><li><code>0x11</code>: <code>0x</code> 开头表示十六进制</li><li>直接打印出来会转化为十进制</li></ul><h4 id=2-数字型范围>2. 数字型范围</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Number</span><span class=p>.</span><span class=nx>MAX_VALUE</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Number</span><span class=p>.</span><span class=nx>MIN_VALUE</span><span class=p>);</span>
-</span></span></code></pre></td></tr></table></div></div><h4 id=3-特殊值>3. 特殊值</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>Infinity</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=o>-</span><span class=kc>Infinity</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>NaN</span><span class=p>);</span>
-</span></span></code></pre></td></tr></table></div></div><ul><li><code>Infinity</code>：无穷大</li><li><code>-Infinity</code>：无穷小</li><li><code>NaN</code>：Not a number，代表一个非数值。</li></ul><h4 id=4-isnan>4. isNaN()</h4><p><code>isNaN</code> 方法用来判断一个变量和或者一个值是数字类型，若不是数字类型则返回 <code>true</code>；否则返回 <code>false</code>。</p><h3 id=23-字符串型-string>2.3 字符串型 String</h3><h4 id=1-定义>1. 定义</h4><p>字符长型可以是引号中的任意文本，其语法为双引号 <code>""</code> 和单引号 <code>''</code>。</p><h4 id=2-字符串引号嵌套>2. 字符串引号嵌套</h4><p>JS可以用单引号嵌套双引号，或者用双引号嵌套单引号（外双内单，外单内双）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>strmsg</span><span class=o>=</span> <span class=s1>&#39;我是&#34;高帅富&#34;程序员&#39;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>strmsg</span><span class=o>=</span> <span class=s2>&#34;我是&#39;高帅富&#39;程序员&#34;</span><span class=p>;</span>
-</span></span></code></pre></td></tr></table></div></div><h4 id=3-字符串转义符>3. 字符串转义符</h4><p>类似HTML里面的特殊字符，字符串中也有特殊字符，我们称之为转义符转义符都是\开头的，常用的转义符及其说明如下：</p><div class=table-wrapper><table><thead><tr><th>转义符</th><th>解释说明</th></tr></thead><tbody><tr><td><code>\n</code></td><td>换行符， n是 newline 的意思</td></tr><tr><td><code>\\</code></td><td>|</td></tr><tr><td><code>\'</code></td><td>单引号'</td></tr><tr><td><code>\"</code></td><td>双引号"</td></tr><tr><td><code>\t</code></td><td>tab 缩进</td></tr><tr><td><code>\b</code></td><td>空格，b 是 blank 的意思</td></tr></tbody></table></div><h4 id=4-获取字符串长度-length>4. 获取字符串长度 length</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>str</span> <span class=o>=</span> <span class=s1>&#39;hello&#39;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>str</span><span class=p>.</span><span class=nx>length</span><span class=p>);</span>
-</span></span></code></pre></td></tr></table></div></div><h4 id=4-字符串拼接>4. 字符串拼接</h4><p>多个字符串之间可以使用+进行拼接，其拼接方式为 ==字符串+任何类型=拼接之后的新字符串== 拼接前会把与字符串相加的任何类型转成字符串，再拼接成一个新的字符串</p><h4 id=5-字符串拼接加强>5. 字符串拼接加强</h4><p>将字符串和变量相加，以后要更新最终的结果字符串，只需更新变量的值。</p><h3 id=24-布尔型-boolean>2.4 布尔型 Boolean</h3><ul><li>布尔型有两个值，<code>true</code> 和 <code>false</code></li><li>布尔型（<code>true</code>，<code>false</code>）在参与加法时当作 <code>1</code> 和 <code>0</code> 使用</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>true</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=c1>// 2
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>false</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span>
-</span></span><span class=line><span class=cl><span class=c1>// 1
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=25-undefined>2.5 Undefined</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>undefined</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span> <span class=c1>// NaN
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>undefined</span><span class=o>+</span><span class=kc>NaN</span><span class=p>);</span> <span class=c1>// NaN
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>undefined</span><span class=o>+</span><span class=kc>true</span><span class=p>);</span> <span class=c1>// NaN
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>undefined</span><span class=o>+</span><span class=s1>&#39;aaa&#39;</span><span class=p>);</span> <span class=c1>// undefinedaaa
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>undefined</span><span class=o>+</span><span class=kc>undefined</span><span class=p>);</span> <span class=c1>// NaN
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=26-空值-null>2.6 空值 Null</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>null</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span> <span class=c1>// 1
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>null</span><span class=o>+</span><span class=kc>undefined</span><span class=p>);</span> <span class=c1>// NaN
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>null</span><span class=o>+</span><span class=kc>NaN</span><span class=p>);</span> <span class=c1>// NaN
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>null</span><span class=o>+</span><span class=kc>true</span><span class=p>);</span> <span class=c1>// 1
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>null</span><span class=o>+</span><span class=s1>&#39;aaa&#39;</span><span class=p>);</span> <span class=c1>// nullaaa
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=kc>null</span><span class=o>+</span><span class=kc>null</span><span class=p>);</span> <span class=c1>// 0
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=3-获取变量数据类型>3. 获取变量数据类型</h2><h3 id=31-typeof-获取变量数据类型>3.1 typeof 获取变量数据类型</h3><p><code>typeof variable</code> （<code>typeof(variable)</code>） 返回一个字符串，值为该变量的数据类型。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>typeof</span> <span class=mi>1</span><span class=p>);</span> <span class=c1>// number
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>typeof</span> <span class=kc>false</span><span class=p>);</span> <span class=c1>// boolean
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>typeof</span> <span class=s1>&#39;aaa&#39;</span><span class=p>);</span>    <span class=c1>// string
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>typeof</span> <span class=kc>undefined</span><span class=p>);</span><span class=c1>// undefined
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>typeof</span> <span class=kc>NaN</span><span class=p>);</span> <span class=c1>// number
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>typeof</span> <span class=kc>Infinity</span><span class=p>);</span> <span class=c1>// number
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>typeof</span> <span class=kc>null</span><span class=p>);</span> <span class=c1>// object
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>typeof</span> <span class=k>typeof</span> <span class=mi>1</span><span class=p>);</span> <span class=c1>// string
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=32-字面量>3.2 字面量</h3><p>字面量是在源代码中一个固定的表示法，通俗来说，就是字面量如何表达这个值。</p><ul><li>数字字面量：<code>1</code>、<code>0</code></li><li>字符串字面量：<code>mphy</code>、<code>aaa</code></li><li>布尔字面量：<code>true</code>、<code>false</code></li></ul><h2 id=4-数据类型转换>4. 数据类型转换</h2><h3 id=41-什么是数据类型转换>4.1 什么是数据类型转换</h3><p>使用表单、prompt获取过来的数据默认是字符串类型的，此时就不能直接简单的进行加法运算，而需要转换变量的数据类型。
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='（三）数据类型 1. 数据类型概述 1.1 为什么需要数据类型 在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，'><title>（三）JavaScript数据类型</title>
+
+<link rel='canonical' href='https://blog.linsnow.cn/p/js-three/'>
+
+<link rel="stylesheet" href="/scss/style.min.9c5d46987745d80244a5677bdc16442c6b4821a1ac549ffda487c42e72a6d6f4.css"><meta property='og:title' content='（三）JavaScript数据类型'>
+<meta property='og:description' content='（三）数据类型 1. 数据类型概述 1.1 为什么需要数据类型 在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，'>
+<meta property='og:url' content='https://blog.linsnow.cn/p/js-three/'>
+<meta property='og:site_name' content='L1nSn0w&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='javascript' /><meta property='article:published_time' content='2021-06-28T19:23:22&#43;08:00'/><meta property='article:modified_time' content='2021-06-28T19:23:22&#43;08:00'/><meta property='og:image' content='https://blog.linsnow.cn/p/js-three/javascript.png' />
+<meta name="twitter:site" content="@Sn0w_L1n">
+    <meta name="twitter:creator" content="@Sn0w_L1n"><meta name="twitter:title" content="（三）JavaScript数据类型">
+<meta name="twitter:description" content="（三）数据类型 1. 数据类型概述 1.1 为什么需要数据类型 在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.linsnow.cn/p/js-three/javascript.png' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3WFJDHZ5LZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3WFJDHZ5LZ', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huc4ee539f708b3764d0a4718d2170118a_9562_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">L1nSn0w&#39;s Blog</a></h1>
+            <h2 class="site-description">无限进步.✍️</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='/links'
+                        
+                        title="afriend"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/log'
+                        
+                        title="bLog"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='/index.xml'
+                        target="_blank"
+                        title="cRSS"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/lin-snow'
+                        target="_blank"
+                        title="dGitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/Sn0w_L1n'
+                        target="_blank"
+                        title="eTwitter"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.facebook.com/l1nsn0w/'
+                        target="_blank"
+                        title="Facebook"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.instagram.com/l1nsn0w/'
+                        target="_blank"
+                        title="Instagram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alien" width="80" height="80" viewBox="0 0 24 24" stroke-width="2" stroke="#ff9300" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M11 17a2.5 2.5 0 0 0 2 0" />
+  <path d="M12 3c-4.664 0 -7.396 2.331 -7.862 5.595a11.816 11.816 0 0 0 2 8.592a10.777 10.777 0 0 0 3.199 3.064c1.666 1 3.664 1 5.33 0a10.777 10.777 0 0 0 3.199 -3.064a11.89 11.89 0 0 0 2 -8.592c-.466 -3.265 -3.198 -5.595 -7.862 -5.595z" />
+  <line x1="8" y1="11" x2="10" y2="13" />
+  <line x1="16" y1="11" x2="14" y2="13" />
+</svg>
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <?xml version="1.0" encoding="UTF-8"?><svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M31 7V24V7Z" fill="none"/><path d="M31 7V24" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.636 6.63605L30.7781 20.7782L16.636 6.63605Z" fill="none"/><path d="M16.636 6.63605L30.7781 20.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7 17H24H7Z" fill="none"/><path d="M7 17H24" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M20.364 17.636L6.22188 31.7782L20.364 17.636Z" fill="none"/><path d="M20.364 17.636L6.22188 31.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17 25V42V25Z" fill="none"/><path d="M17 25V42" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.636 27.636L31.7781 41.7782L17.636 27.636Z" fill="none"/><path d="M17.636 27.636L31.7781 41.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24 31L42 31L24 31Z" fill="none"/><path d="M24 31L42 31" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M42.364 16.636L28.2219 30.7782L42.364 16.636Z" fill="none"/><path d="M42.364 16.636L28.2219 30.7782" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z" fill="none" stroke="#579901" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/nav/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-package" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+  <line x1="12" y1="12" x2="20" y2="7.5" />
+  <line x1="12" y1="12" x2="12" y2="21" />
+  <line x1="12" y1="12" x2="4" y2="7.5" />
+  <line x1="16" y1="5.25" x2="8" y2="9.75" />
+</svg>
+                
+                <span>导航</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://blog.linsnow.cn/" selected>中文</option>
+                        
+                            <option value="https://blog.linsnow.cn/en/" >English</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/js-three/">
+                <img src="/p/js-three/javascript_hu51e240a209599e33f736637c547cd908_22418_800x0_resize_box_3.png"
+                        srcset="/p/js-three/javascript_hu51e240a209599e33f736637c547cd908_22418_800x0_resize_box_3.png 800w, /p/js-three/javascript_hu51e240a209599e33f736637c547cd908_22418_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="500" 
+                        loading="lazy"
+                        alt="Featured image of post （三）JavaScript数据类型" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/javascript/" >
+                javascript笔记
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/js-three/">（三）JavaScript数据类型</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 28, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="三数据类型">（三）数据类型</h1>
+<h2 id="1-数据类型概述">1. 数据类型概述</h2>
+<h3 id="11-为什么需要数据类型">1.1 为什么需要数据类型</h3>
+<p>在计算机中，不同的数据所需占用的存储空间是不同的，为了便于把数据分成所需内存大小不同的数据，充分利用存储空间，于是定义了不同的数据类型。</p>
+<p>简单来说，数据类型就是数据的类别型号。比如姓名“张三” ，年龄18，这些数据的类型是不一样的。</p>
+<h3 id="12-变量的数据类型">1.2 变量的数据类型</h3>
+<p>变量是用来存储值的所在处，它们有名字和数据类型。变量的数据类型决定了如何将代表这些值的位存储到计算机的内存中。==JavaScript是一种弱类型或者说动态语言==。这意味着不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//这是一个数字型var arerouok =的； //这是一个字符串
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>在代码运行时，变量的数据类型是由JS引擎根据=右边变量值的数据类型来判断的，运行完毕之后，变量就确定了数据类型
+JavaScript拥有动态类型，同时也意味着相同的变量可用作不同的类型：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// x为数字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">&#34;Bill&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// x为字符串
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2-简单数据类型">2. 简单数据类型</h2>
+<h3 id="21-简单数据类型基本数据类型">2.1 简单数据类型（基本数据类型）</h3>
+<p>JavaScript中的简单数据类型及其说明如下：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>简单数据类型</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number</td>
+<td>数字型，包含整值和浮点值，如21、0.21</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>布尔值类型，如true、 false，等价于1和0</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>String</td>
+<td>字符串类型，如“张三”注意js 里面，字符串都带引号</td>
+<td><code>&quot;&quot;</code></td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td><code>var a;</code> 声明了变量a但是没有给值，此时a =undefinedNull</td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td>Null</td>
+<td><code>var a = null;</code> 声明了变量a为空值</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="22-数字型-number">2.2 数字型 Number</h3>
+<h4 id="1-数字型进制">1. 数字型进制</h4>
+<p>常见：二进制、八进制、十进制、十六进制</p>
+<ul>
+<li><code>0123</code>: <code>0</code> 开头表示八进制</li>
+<li><code>0b11</code>: <code>0b</code> 开头表示二进制</li>
+<li><code>0x11</code>: <code>0x</code> 开头表示十六进制</li>
+<li>直接打印出来会转化为十进制</li>
+</ul>
+<h4 id="2-数字型范围">2. 数字型范围</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_VALUE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">MIN_VALUE</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3-特殊值">3. 特殊值</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">-</span><span class="kc">Infinity</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">NaN</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>Infinity</code>：无穷大</li>
+<li><code>-Infinity</code>：无穷小</li>
+<li><code>NaN</code>：Not a number，代表一个非数值。</li>
+</ul>
+<h4 id="4-isnan">4. isNaN()</h4>
+<p><code>isNaN</code> 方法用来判断一个变量和或者一个值是数字类型，若不是数字类型则返回 <code>true</code>；否则返回 <code>false</code>。</p>
+<h3 id="23-字符串型-string">2.3 字符串型 String</h3>
+<h4 id="1-定义">1. 定义</h4>
+<p>字符长型可以是引号中的任意文本，其语法为双引号 <code>&quot;&quot;</code> 和单引号 <code>''</code>。</p>
+<h4 id="2-字符串引号嵌套">2. 字符串引号嵌套</h4>
+<p>JS可以用单引号嵌套双引号，或者用双引号嵌套单引号（外双内单，外单内双）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">strmsg</span><span class="o">=</span> <span class="s1">&#39;我是&#34;高帅富&#34;程序员&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">strmsg</span><span class="o">=</span> <span class="s2">&#34;我是&#39;高帅富&#39;程序员&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3-字符串转义符">3. 字符串转义符</h4>
+<p>类似HTML里面的特殊字符，字符串中也有特殊字符，我们称之为转义符转义符都是\开头的，常用的转义符及其说明如下：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>转义符</th>
+<th>解释说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\n</code></td>
+<td>换行符， n是 newline 的意思</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>|</td>
+</tr>
+<tr>
+<td><code>\'</code></td>
+<td>单引号'</td>
+</tr>
+<tr>
+<td><code>\&quot;</code></td>
+<td>双引号&quot;</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>tab 缩进</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>空格，b 是 blank 的意思</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="4-获取字符串长度-length">4. 获取字符串长度 length</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="4-字符串拼接">4. 字符串拼接</h4>
+<p>多个字符串之间可以使用+进行拼接，其拼接方式为 ==字符串+任何类型=拼接之后的新字符串== 拼接前会把与字符串相加的任何类型转成字符串，再拼接成一个新的字符串</p>
+<h4 id="5-字符串拼接加强">5. 字符串拼接加强</h4>
+<p>将字符串和变量相加，以后要更新最终的结果字符串，只需更新变量的值。</p>
+<h3 id="24-布尔型-boolean">2.4 布尔型 Boolean</h3>
+<ul>
+<li>布尔型有两个值，<code>true</code> 和 <code>false</code></li>
+<li>布尔型（<code>true</code>，<code>false</code>）在参与加法时当作 <code>1</code> 和 <code>0</code> 使用</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 1
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="25-undefined">2.5 Undefined</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// NaN
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="o">+</span><span class="kc">NaN</span><span class="p">);</span> <span class="c1">// NaN
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="o">+</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// NaN
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="o">+</span><span class="s1">&#39;aaa&#39;</span><span class="p">);</span> <span class="c1">// undefinedaaa
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">undefined</span><span class="o">+</span><span class="kc">undefined</span><span class="p">);</span> <span class="c1">// NaN
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="26-空值-null">2.6 空值 Null</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="o">+</span><span class="kc">undefined</span><span class="p">);</span> <span class="c1">// NaN
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="o">+</span><span class="kc">NaN</span><span class="p">);</span> <span class="c1">// NaN
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="o">+</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="o">+</span><span class="s1">&#39;aaa&#39;</span><span class="p">);</span> <span class="c1">// nullaaa
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span><span class="o">+</span><span class="kc">null</span><span class="p">);</span> <span class="c1">// 0
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-获取变量数据类型">3. 获取变量数据类型</h2>
+<h3 id="31-typeof-获取变量数据类型">3.1 typeof 获取变量数据类型</h3>
+<p><code>typeof variable</code> （<code>typeof(variable)</code>） 返回一个字符串，值为该变量的数据类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// number
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// boolean
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="s1">&#39;aaa&#39;</span><span class="p">);</span>    <span class="c1">// string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">undefined</span><span class="p">);</span><span class="c1">// undefined
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">NaN</span><span class="p">);</span> <span class="c1">// number
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">Infinity</span><span class="p">);</span> <span class="c1">// number
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">null</span><span class="p">);</span> <span class="c1">// object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="k">typeof</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// string
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="32-字面量">3.2 字面量</h3>
+<p>字面量是在源代码中一个固定的表示法，通俗来说，就是字面量如何表达这个值。</p>
+<ul>
+<li>数字字面量：<code>1</code>、<code>0</code></li>
+<li>字符串字面量：<code>mphy</code>、<code>aaa</code></li>
+<li>布尔字面量：<code>true</code>、<code>false</code></li>
+</ul>
+<h2 id="4-数据类型转换">4. 数据类型转换</h2>
+<h3 id="41-什么是数据类型转换">4.1 什么是数据类型转换</h3>
+<p>使用表单、prompt获取过来的数据默认是字符串类型的，此时就不能直接简单的进行加法运算，而需要转换变量的数据类型。
 通俗来说，就是把一种数据类型的变量转换成另外一种数据类型
-我们通常会实现3种方式的转换：</p><ul><li>转换为字符串类型</li><li>转换为数字型</li><li>转换为布尔型</li></ul><h3 id=42-转换成字符串的三种方法>4.2 转换成字符串的三种方法</h3><p>一般用第三种方式，隐式转换。</p><ul><li><code>toString()</code> 方法</li><li><code>String()</code> 方法</li><li>加号 <code>+</code> 拼接字符串</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>num</span> <span class=o>=</span> <span class=mi>12</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num</span><span class=p>.</span><span class=nx>toString</span><span class=p>());</span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>String</span><span class=p>(</span><span class=nx>num</span><span class=p>));</span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num</span> <span class=o>+</span> <span class=s1>&#39;&#39;</span><span class=p>);</span>
-</span></span></code></pre></td></tr></table></div></div><p>引申：数字字符长转数字</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>str</span> <span class=o>=</span> <span class=s1>&#39;123&#39;</span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>str</span> <span class=o>-</span> <span class=s1>&#39;&#39;</span><span class=p>);</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=43-转换为数字型>4.3 转换为数字型</h3><div class=table-wrapper><table><thead><tr><th>方式</th><th>说明</th><th>案例</th></tr></thead><tbody><tr><td><code>parseInt(str)</code> 函数</td><td>string->整数型</td><td>parseInt(&lsquo;10&rsquo;)</td></tr><tr><td><code>parseFloat()</code> 函数</td><td>string->浮点型</td><td>parseFloat(&lsquo;3.14&rsquo;)</td></tr><tr><td><code>Number()</code> 强转换函数</td><td>string->数字型</td><td>Number(&lsquo;12&rsquo;)</td></tr><tr><td>JS 隐式转换</td><td>算术运算符隐式转换为数字型</td><td><code>'12'- 0</code> 或 <code>'12' - ''</code> 或 <code>'12'*1</code></td></tr></tbody></table></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>parseInt</span><span class=p>(</span><span class=s1>&#39;123&#39;</span><span class=p>));</span> <span class=c1>// 123
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>parseFloat</span><span class=p>(</span><span class=s1>&#39;3.14&#39;</span><span class=p>));</span> <span class=c1>// 3.14
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;123&#39;</span> <span class=o>-</span> <span class=mi>0</span><span class=p>);</span> <span class=c1>// 123
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;123&#39;</span> <span class=o>-</span> <span class=s1>&#39;&#39;</span><span class=p>);</span> <span class=c1>// 123
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>parseFloat</span><span class=p>(</span><span class=s1>&#39;999&#39;</span><span class=p>));</span> <span class=c1>// 999
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>parseInt</span><span class=p>(</span><span class=s1>&#39;3.14159&#39;</span><span class=p>));</span> <span class=c1>// 3
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>parseInt</span><span class=p>(</span><span class=s1>&#39;120px&#39;</span><span class=p>));</span> <span class=c1>// 120
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Number</span><span class=p>(</span><span class=s1>&#39;100&#39;</span><span class=p>));</span> <span class=c1>// 100
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Number</span><span class=p>(</span><span class=s1>&#39;100.32&#39;</span><span class=p>));</span> <span class=c1>// 100.32
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Number</span><span class=p>(</span><span class=s1>&#39;100px&#39;</span><span class=p>));</span> <span class=c1>// NaN
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;100px&#39;</span> <span class=o>-</span> <span class=s1>&#39;&#39;</span><span class=p>);</span> <span class=c1>// NaN
-</span></span></span></code></pre></td></tr></table></div></div><p>注意：</p><ol><li>数字字符串（<code>'12.3'</code>，<code>12</code>）之间进行加法运算实际上是字符串的拼接，结果还是字符串；而数字字符串之间的减法运算是算术运算，结果是数字型。</li><li>一个数字字符长和一个数字相乘，结果是算数运算结果，为数字型。</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;10&#39;</span> <span class=o>+</span> <span class=s1>&#39;2&#39;</span><span class=p>);</span> <span class=c1>// 102
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;10&#39;</span> <span class=o>-</span> <span class=s1>&#39;2&#39;</span><span class=p>);</span> <span class=c1>// 8
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;10&#39;</span> <span class=o>+</span> <span class=s1>&#39;3.2&#39;</span><span class=p>);</span> <span class=c1>// 103.2
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;10&#39;</span> <span class=o>-</span> <span class=s1>&#39;3.2&#39;</span><span class=p>);</span> <span class=c1>// 6.8
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;12&#39;</span><span class=o>*</span><span class=mi>3</span><span class=p>);</span> <span class=c1>// 36
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=44-转换为布尔型>4.4 转换为布尔型</h3><p>使用 <code>Boolean()</code> 函数转换。</p><ul><li>转换值为 <code>false</code>：<code>''</code>, <code>0</code>, <code>NaN</code>, <code>null</code>, <code>undefined</code>（5个）</li><li>其他的转换值均为 <code>true</code></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Boolean</span><span class=p>(</span><span class=s1>&#39;&#39;</span><span class=p>));</span> <span class=c1>// false
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Boolean</span><span class=p>(</span><span class=mi>0</span><span class=p>));</span> <span class=c1>// false
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Boolean</span><span class=p>(</span><span class=kc>NaN</span><span class=p>));</span> <span class=c1>// false
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Boolean</span><span class=p>(</span><span class=kc>null</span><span class=p>));</span> <span class=c1>// false
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Boolean</span><span class=p>(</span><span class=kc>undefined</span><span class=p>));</span> <span class=c1>// false
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>Boolean</span><span class=p>([]));</span> <span class=c1>// true
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=5-标识符关键字保留字>5. 标识符、关键字、保留字</h2><h3 id=51-标识符>5.1 标识符</h3><p>标识（zhi）符：就是指开发人员为变量、属性、函数、参数取的名字。标识符不能是关键字或保留字。</p><h3 id=52-关键字>5.2 关键字</h3><p>关键字：是指JS本身已经使用了的字，不能再用它们充当变量名、方法名。</p><p>包括: break, case, catch, continue, default, delete, do, else, finally. for, function, if, in instanceof, new. return, switch, this, throw, try, typeof, var, void, while, with等。</p><h3 id=53-保留字>5.3 保留字</h3><p>保留字：实际上就是预留的“关键字” ，意思是现在虽然还不是关键字，但是未来可能会成为关键字，同样不能使用它们当变量名或方法名。</p><p>包括: boolean, byte, char, class, const, debugger, double, enum, export, extends fimal, float. goto, implements, import, int, interface, long, mative, package private, protected, public, short, static, super, synchronized, throws, transient volatile等。</p><h2 id=6-拓展8-种基本数据类型>6. 拓展：8 种基本数据类型</h2><p>8 种基本数据类型中，前 7 种为基本数据类型，最后 1 种为复杂数据类型（<code>object</code>）。</p><ul><li><code>number</code>：用于任何类型的数字：整数或浮点数，在 $\pm(2^{53}-1)$ 范围内的整数。</li><li><code>bigint</code>：用于任意长的整数。</li><li><code>string</code>：字符串，一个字符串可以包含 0 个或多个字符，没有单独的单字符类型。</li><li><code>boolean</code>：值为 <code>true</code> 或 <code>false</code></li><li><code>null</code>：未知的值，只有一个 <code>null</code> 值的独立类型。</li><li><code>undefined</code>：未定义得值，只有一个 <code>undefined</code> 值的独立类型。</li><li><code>symbol</code>：用于唯一的标识符。</li><li><code>object</code>：用于更复杂的数据结构。</li></ul><p>使用 <code>typeof</code> 运算符查看变量的数据类型：</p><ul><li>两种形式：<code>typeof x</code> 或 <code>typeof(x)</code></li><li>以字符串的形式返回类型名称：例如 <code>string</code></li><li><code>typeof null</code> 会返回 <code>"object"</code> —— 这是 JavaScript 编程语言的一个错误，实际上它并不是一个 <code>object</code>。</li></ul></section><footer class=article-footer><section class=article-tags><a href=/tags/javascript/>javascript</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/p/js-setup-obj/><div class=article-image><img src=/p/js-setup-obj/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post JavaScript中创建对象以及函数" data-key=js-setup-obj data-hash="md5-pLRe+2c02+225JuNW6OltA=="></div><div class=article-details><h2 class=article-title>JavaScript中创建对象以及函数</h2></div></a></article><article class=has-image><a href=/p/js-twelve/><div class=article-image><img src=/p/js-twelve/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （十二）JavaScript复杂类型" data-key=js-twelve data-hash="md5-pLRe+2c02+225JuNW6OltA=="></div><div class=article-details><h2 class=article-title>（十二）JavaScript复杂类型</h2></div></a></article><article class=has-image><a href=/p/js-eleven/><div class=article-image><img src=/p/js-eleven/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （十一）JavaScript内置对象" data-key=js-eleven data-hash="md5-pLRe+2c02+225JuNW6OltA=="></div><div class=article-details><h2 class=article-title>（十一）JavaScript内置对象</h2></div></a></article><article class=has-image><a href=/p/js-ten/><div class=article-image><img src=/p/js-ten/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （十）JavaScript对象" data-key=js-ten data-hash="md5-pLRe+2c02+225JuNW6OltA=="></div><div class=article-details><h2 class=article-title>（十）JavaScript对象</h2></div></a></article><article class=has-image><a href=/p/js-nine/><div class=article-image><img src=/p/js-nine/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post （九）JavaScript声明提升" data-key=js-nine data-hash="md5-pLRe+2c02+225JuNW6OltA=="></div><div class=article-details><h2 class=article-title>（九）JavaScript声明提升</h2></div></a></article></div></div></aside><script src=//cdn.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js></script><div id=tcomment></div><style>.twikoo{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}:root[data-scheme=dark]{--twikoo-body-text-color-main:rgba(255, 255, 255, 0.9);--twikoo-body-text-color:rgba(255, 255, 255, 0.7)}.twikoo .el-input-group__prepend,.twikoo .tk-action-icon,.twikoo .tk-time,.twikoo .tk-comments-count{color:var(--twikoo-body-text-color)}.twikoo .el-input__inner,.twikoo .el-textarea__inner,.twikoo .tk-preview-container,.twikoo .tk-content,.twikoo .tk-nick,.twikoo .tk-send{color:var(--twikoo-body-text-color-main)}.twikoo .el-button{color:var(--twikoo-body-text-color)!important}.OwO .OwO-body{background-color:var(--body-background)!important;color:var(--body-text-color)!important}</style><script>twikoo.init({envId:"https://my-twikoo-nu.vercel.app/",el:"#tcomment"})</script><footer class=site-footer><section class=copyright>&copy;
-2020 -
-2022 L1nSn0w's Blog</section><section class=powerby>Powered by GitHub.Pages<br>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.13.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-<button class="pswp__button pswp__button--share" title=Share></button>
-<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main><aside class="sidebar right-sidebar sticky"><div class=announce><p><strong style=color:#e99312>📢State：</strong><br>Slowly Update .😓</p></div><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#三数据类型>（三）数据类型</a><ol><li><a href=#1-数据类型概述>1. 数据类型概述</a><ol><li><a href=#11-为什么需要数据类型>1.1 为什么需要数据类型</a></li><li><a href=#12-变量的数据类型>1.2 变量的数据类型</a></li></ol></li><li><a href=#2-简单数据类型>2. 简单数据类型</a><ol><li><a href=#21-简单数据类型基本数据类型>2.1 简单数据类型（基本数据类型）</a></li><li><a href=#22-数字型-number>2.2 数字型 Number</a><ol><li><a href=#1-数字型进制>1. 数字型进制</a></li><li><a href=#2-数字型范围>2. 数字型范围</a></li><li><a href=#3-特殊值>3. 特殊值</a></li><li><a href=#4-isnan>4. isNaN()</a></li></ol></li><li><a href=#23-字符串型-string>2.3 字符串型 String</a><ol><li><a href=#1-定义>1. 定义</a></li><li><a href=#2-字符串引号嵌套>2. 字符串引号嵌套</a></li><li><a href=#3-字符串转义符>3. 字符串转义符</a></li><li><a href=#4-获取字符串长度-length>4. 获取字符串长度 length</a></li><li><a href=#4-字符串拼接>4. 字符串拼接</a></li><li><a href=#5-字符串拼接加强>5. 字符串拼接加强</a></li></ol></li><li><a href=#24-布尔型-boolean>2.4 布尔型 Boolean</a></li><li><a href=#25-undefined>2.5 Undefined</a></li><li><a href=#26-空值-null>2.6 空值 Null</a></li></ol></li><li><a href=#3-获取变量数据类型>3. 获取变量数据类型</a><ol><li><a href=#31-typeof-获取变量数据类型>3.1 typeof 获取变量数据类型</a></li><li><a href=#32-字面量>3.2 字面量</a></li></ol></li><li><a href=#4-数据类型转换>4. 数据类型转换</a><ol><li><a href=#41-什么是数据类型转换>4.1 什么是数据类型转换</a></li><li><a href=#42-转换成字符串的三种方法>4.2 转换成字符串的三种方法</a></li><li><a href=#43-转换为数字型>4.3 转换为数字型</a></li><li><a href=#44-转换为布尔型>4.4 转换为布尔型</a></li></ol></li><li><a href=#5-标识符关键字保留字>5. 标识符、关键字、保留字</a><ol><li><a href=#51-标识符>5.1 标识符</a></li><li><a href=#52-关键字>5.2 关键字</a></li><li><a href=#53-保留字>5.3 保留字</a></li></ol></li><li><a href=#6-拓展8-种基本数据类型>6. 拓展：8 种基本数据类型</a></li></ol></li></ol></nav></div></section></aside></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
-<script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script src=https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js integrity=sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg crossorigin=anonymous></script>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css integrity=sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE crossorigin=anonymous><script>NProgress.start(),document.addEventListener("readystatechange",()=>{document.readyState==="interactive"&&NProgress.inc(.8),document.readyState==="complete"&&NProgress.done()})</script></body></html>
+我们通常会实现3种方式的转换：</p>
+<ul>
+<li>转换为字符串类型</li>
+<li>转换为数字型</li>
+<li>转换为布尔型</li>
+</ul>
+<h3 id="42-转换成字符串的三种方法">4.2 转换成字符串的三种方法</h3>
+<p>一般用第三种方式，隐式转换。</p>
+<ul>
+<li><code>toString()</code> 方法</li>
+<li><code>String()</code> 方法</li>
+<li>加号 <code>+</code> 拼接字符串</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">num</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>引申：数字字符长转数字</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;123&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span> <span class="o">-</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="43-转换为数字型">4.3 转换为数字型</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>parseInt(str)</code> 函数</td>
+<td>string-&gt;整数型</td>
+<td>parseInt(&lsquo;10&rsquo;)</td>
+</tr>
+<tr>
+<td><code>parseFloat()</code> 函数</td>
+<td>string-&gt;浮点型</td>
+<td>parseFloat(&lsquo;3.14&rsquo;)</td>
+</tr>
+<tr>
+<td><code>Number()</code> 强转换函数</td>
+<td>string-&gt;数字型</td>
+<td>Number(&lsquo;12&rsquo;)</td>
+</tr>
+<tr>
+<td>JS 隐式转换</td>
+<td>算术运算符隐式转换为数字型</td>
+<td><code>'12'-  0</code> 或 <code>'12' - ''</code> 或 <code>'12'*1</code></td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">));</span> <span class="c1">// 123
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">));</span> <span class="c1">// 3.14
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;123&#39;</span> <span class="o">-</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 123
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;123&#39;</span> <span class="o">-</span> <span class="s1">&#39;&#39;</span><span class="p">);</span> <span class="c1">// 123
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;999&#39;</span><span class="p">));</span> <span class="c1">// 999
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;3.14159&#39;</span><span class="p">));</span> <span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;120px&#39;</span><span class="p">));</span> <span class="c1">// 120
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">));</span> <span class="c1">// 100
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;100.32&#39;</span><span class="p">));</span> <span class="c1">// 100.32
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;100px&#39;</span><span class="p">));</span> <span class="c1">// NaN
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;100px&#39;</span> <span class="o">-</span> <span class="s1">&#39;&#39;</span><span class="p">);</span> <span class="c1">// NaN
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意：</p>
+<ol>
+<li>数字字符串（<code>'12.3'</code>，<code>12</code>）之间进行加法运算实际上是字符串的拼接，结果还是字符串；而数字字符串之间的减法运算是算术运算，结果是数字型。</li>
+<li>一个数字字符长和一个数字相乘，结果是算数运算结果，为数字型。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;10&#39;</span> <span class="o">+</span> <span class="s1">&#39;2&#39;</span><span class="p">);</span> <span class="c1">// 102
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;10&#39;</span> <span class="o">-</span> <span class="s1">&#39;2&#39;</span><span class="p">);</span> <span class="c1">// 8
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;10&#39;</span> <span class="o">+</span> <span class="s1">&#39;3.2&#39;</span><span class="p">);</span> <span class="c1">// 103.2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;10&#39;</span> <span class="o">-</span> <span class="s1">&#39;3.2&#39;</span><span class="p">);</span> <span class="c1">// 6.8
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// 36
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="44-转换为布尔型">4.4 转换为布尔型</h3>
+<p>使用 <code>Boolean()</code> 函数转换。</p>
+<ul>
+<li>转换值为 <code>false</code>：<code>''</code>, <code>0</code>, <code>NaN</code>, <code>null</code>, <code>undefined</code>（5个）</li>
+<li>其他的转换值均为 <code>true</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">));</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="kc">NaN</span><span class="p">));</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="kc">null</span><span class="p">));</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">(</span><span class="kc">undefined</span><span class="p">));</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">([]));</span> <span class="c1">// true
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5-标识符关键字保留字">5. 标识符、关键字、保留字</h2>
+<h3 id="51-标识符">5.1 标识符</h3>
+<p>标识（zhi）符：就是指开发人员为变量、属性、函数、参数取的名字。标识符不能是关键字或保留字。</p>
+<h3 id="52-关键字">5.2 关键字</h3>
+<p>关键字：是指JS本身已经使用了的字，不能再用它们充当变量名、方法名。</p>
+<p>包括: break, case, catch, continue, default, delete, do, else, finally. for, function, if, in instanceof, new. return, switch, this, throw, try, typeof, var, void, while, with等。</p>
+<h3 id="53-保留字">5.3 保留字</h3>
+<p>保留字：实际上就是预留的“关键字” ，意思是现在虽然还不是关键字，但是未来可能会成为关键字，同样不能使用它们当变量名或方法名。</p>
+<p>包括: boolean, byte, char, class, const, debugger, double, enum, export, extends fimal, float. goto, implements, import, int, interface, long, mative, package private, protected, public, short, static, super, synchronized, throws, transient volatile等。</p>
+<h2 id="6-拓展8-种基本数据类型">6. 拓展：8 种基本数据类型</h2>
+<p>8 种基本数据类型中，前 7 种为基本数据类型，最后 1 种为复杂数据类型（<code>object</code>）。</p>
+<ul>
+<li><code>number</code>：用于任何类型的数字：整数或浮点数，在 $\pm(2^{53}-1)$ 范围内的整数。</li>
+<li><code>bigint</code>：用于任意长的整数。</li>
+<li><code>string</code>：字符串，一个字符串可以包含 0 个或多个字符，没有单独的单字符类型。</li>
+<li><code>boolean</code>：值为 <code>true</code> 或 <code>false</code></li>
+<li><code>null</code>：未知的值，只有一个 <code>null</code> 值的独立类型。</li>
+<li><code>undefined</code>：未定义得值，只有一个 <code>undefined</code> 值的独立类型。</li>
+<li><code>symbol</code>：用于唯一的标识符。</li>
+<li><code>object</code>：用于更复杂的数据结构。</li>
+</ul>
+<p>使用 <code>typeof</code> 运算符查看变量的数据类型：</p>
+<ul>
+<li>两种形式：<code>typeof x</code> 或 <code>typeof(x)</code></li>
+<li>以字符串的形式返回类型名称：例如 <code>string</code></li>
+<li><code>typeof null</code> 会返回 <code>&quot;object&quot;</code> —— 这是 JavaScript 编程语言的一个错误，实际上它并不是一个 <code>object</code>。</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/javascript/">javascript</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/js-setup-obj/">
+        
+        
+            <div class="article-image">
+                <img src="/p/js-setup-obj/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post JavaScript中创建对象以及函数"
+                        data-key="js-setup-obj" 
+                        data-hash="md5-pLRe&#43;2c02&#43;225JuNW6OltA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaScript中创建对象以及函数</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/js-twelve/">
+        
+        
+            <div class="article-image">
+                <img src="/p/js-twelve/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （十二）JavaScript复杂类型"
+                        data-key="js-twelve" 
+                        data-hash="md5-pLRe&#43;2c02&#43;225JuNW6OltA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（十二）JavaScript复杂类型</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/js-eleven/">
+        
+        
+            <div class="article-image">
+                <img src="/p/js-eleven/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （十一）JavaScript内置对象"
+                        data-key="js-eleven" 
+                        data-hash="md5-pLRe&#43;2c02&#43;225JuNW6OltA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（十一）JavaScript内置对象</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/js-ten/">
+        
+        
+            <div class="article-image">
+                <img src="/p/js-ten/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （十）JavaScript对象"
+                        data-key="js-ten" 
+                        data-hash="md5-pLRe&#43;2c02&#43;225JuNW6OltA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（十）JavaScript对象</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/js-nine/">
+        
+        
+            <div class="article-image">
+                <img src="/p/js-nine/javascript.a4b45efb6734dbedb6e49b8d5ba3a5b4_hu51e240a209599e33f736637c547cd908_22418_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post （九）JavaScript声明提升"
+                        data-key="js-nine" 
+                        data-hash="md5-pLRe&#43;2c02&#43;225JuNW6OltA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（九）JavaScript声明提升</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send {
+        color: var(--twikoo-body-text-color-main);
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: 'https:\/\/my-twikoo-nu.vercel.app\/',
+        el: '#tcomment',})
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 L1nSn0w&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+            Powered by GitHub.Pages <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        <div class="announce">
+            <p><strong style="color: #e99312;">📢State：</strong><br>
+                Slowly Update .😓            
+            </p>
+ 
+         </div>
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#三数据类型">（三）数据类型</a>
+      <ol>
+        <li><a href="#1-数据类型概述">1. 数据类型概述</a>
+          <ol>
+            <li><a href="#11-为什么需要数据类型">1.1 为什么需要数据类型</a></li>
+            <li><a href="#12-变量的数据类型">1.2 变量的数据类型</a></li>
+          </ol>
+        </li>
+        <li><a href="#2-简单数据类型">2. 简单数据类型</a>
+          <ol>
+            <li><a href="#21-简单数据类型基本数据类型">2.1 简单数据类型（基本数据类型）</a></li>
+            <li><a href="#22-数字型-number">2.2 数字型 Number</a>
+              <ol>
+                <li><a href="#1-数字型进制">1. 数字型进制</a></li>
+                <li><a href="#2-数字型范围">2. 数字型范围</a></li>
+                <li><a href="#3-特殊值">3. 特殊值</a></li>
+                <li><a href="#4-isnan">4. isNaN()</a></li>
+              </ol>
+            </li>
+            <li><a href="#23-字符串型-string">2.3 字符串型 String</a>
+              <ol>
+                <li><a href="#1-定义">1. 定义</a></li>
+                <li><a href="#2-字符串引号嵌套">2. 字符串引号嵌套</a></li>
+                <li><a href="#3-字符串转义符">3. 字符串转义符</a></li>
+                <li><a href="#4-获取字符串长度-length">4. 获取字符串长度 length</a></li>
+                <li><a href="#4-字符串拼接">4. 字符串拼接</a></li>
+                <li><a href="#5-字符串拼接加强">5. 字符串拼接加强</a></li>
+              </ol>
+            </li>
+            <li><a href="#24-布尔型-boolean">2.4 布尔型 Boolean</a></li>
+            <li><a href="#25-undefined">2.5 Undefined</a></li>
+            <li><a href="#26-空值-null">2.6 空值 Null</a></li>
+          </ol>
+        </li>
+        <li><a href="#3-获取变量数据类型">3. 获取变量数据类型</a>
+          <ol>
+            <li><a href="#31-typeof-获取变量数据类型">3.1 typeof 获取变量数据类型</a></li>
+            <li><a href="#32-字面量">3.2 字面量</a></li>
+          </ol>
+        </li>
+        <li><a href="#4-数据类型转换">4. 数据类型转换</a>
+          <ol>
+            <li><a href="#41-什么是数据类型转换">4.1 什么是数据类型转换</a></li>
+            <li><a href="#42-转换成字符串的三种方法">4.2 转换成字符串的三种方法</a></li>
+            <li><a href="#43-转换为数字型">4.3 转换为数字型</a></li>
+            <li><a href="#44-转换为布尔型">4.4 转换为布尔型</a></li>
+          </ol>
+        </li>
+        <li><a href="#5-标识符关键字保留字">5. 标识符、关键字、保留字</a>
+          <ol>
+            <li><a href="#51-标识符">5.1 标识符</a></li>
+            <li><a href="#52-关键字">5.2 关键字</a></li>
+            <li><a href="#53-保留字">5.3 保留字</a></li>
+          </ol>
+        </li>
+        <li><a href="#6-拓展8-种基本数据类型">6. 拓展：8 种基本数据类型</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js"
+    integrity="sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg"
+    crossorigin="anonymous"
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css"
+    integrity="sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE"
+    crossorigin="anonymous"
+/>
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+
+    </body>
+</html>

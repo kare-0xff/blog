@@ -4,6 +4,12 @@ slug: "links"
 layout: links
 # image: links.png
 toc: false
+menu:
+    main:
+        name: 友链
+        weight: -40
+        params: 
+            icon: friends
 ---
 
 ## **我自己的blog信息🤡**

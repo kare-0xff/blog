@@ -5,7 +5,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Global style
 */
 :root {
-    --main-top-padding: 35px;
+    --main-top-padding: 40px;
 
     @include respond(xl) {
         --main-top-padding: 50px;
@@ -20,7 +20,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
     --tag-border-radius: 4px;
 
-    --section-separation: 40px;
+    --section-separation: 60px;
 
     --scrollbar-thumb: hsl(0, 0%, 85%);
     --scrollbar-track: var(--body-background);

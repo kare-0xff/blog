@@ -2,7 +2,7 @@
 @media (min-width: 1024px) {
     .article-list--compact.links {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr ;
         background: none;
         box-shadow: none;
         
@@ -10,6 +10,7 @@
             background: var(--card-background);
             border: none;
             box-shadow: var(--shadow-l2);
+            // margin-right: 8px;
             margin-bottom: 8px;
             border-radius: 10px;
             &:nth-child(odd) {
@@ -18,6 +19,81 @@
         }
     }
 }
+
+//导航样式
+@media (min-width: 1024px) {
+    .article-list--compact.nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background: none;
+        box-shadow: none;
+        
+        article {
+            background: var(--card-background);
+            border: none;
+            box-shadow: var(--shadow-l2);
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+        }
+    }
+}
+//导航标题
+.navtitle {
+    background: var(--card-background);
+    width: 100%;
+    height: 10%;
+    box-shadow: var(--shadow-l2);
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color: var(--card-text-color-main);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 43px;
+    padding-right: 43px;
+    margin-bottom: -10px;
+}
+//无功能div块
+.nonusediv {
+    background: var(--card-background);
+    width: 40%;
+    height: 10%;
+    box-shadow: var(--shadow-l2);
+    font-size: 1.5rem;
+    border-radius: 10px;
+    color: #0e96e9b3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-bottom: -54px;
+    margin-top: -45px;
+}
+
+//公告
+.announce {
+    padding-left: 20%;
+    padding-right: 20%;
+    background: var(--card-background);
+    width: 100%;
+    height: auto;
+    box-shadow: var(--shadow-l2);
+    font-size: 1.5rem;
+    border-radius: 10px;
+    color: var(--card-text-color-main);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: -45px;
+}
+
+
+
+
+
+
 
 // 设置选中字体的区域背景颜色
 //修改选中颜色
@@ -48,7 +124,7 @@ a {
 }
 // 页面配色样式
 :root {
-    
+
     
     // 文章内容图片圆角阴影
     .article-page .main-article .article-content {

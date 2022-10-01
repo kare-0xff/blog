@@ -1,0 +1,120 @@
+{{ define "body-class" }}article-page keep-sidebar{{ end }}
+{{ define "main" }}
+    
+<!-- {{ partial "article/article.html" . }}     -->
+<div class="navtitle">
+   <h2>🍥欢迎来到L1nSn0w的个人导航页🫡</h2>
+</div>
+<div class="nonusediv">
+    <h3>🏐站点</h3>
+ </div>
+    <div class="article-list--compact nav">
+        {{ $siteResources := resources }}
+        {{ range $i, $link :=  $.Site.Data.website }}
+            <article>
+                <a href="{{ $link.website }}" target="_blank" rel="noopener">
+                    <div class="article-details">
+                        <h2 class="article-title">
+                            {{- $link.title -}}
+                        </h2>
+                        <footer class="article-time">
+                            {{ with $link.description }}
+                                {{ . }}
+                            {{ else }}
+                                {{ $link.website }}
+                            {{ end }}
+                        </footer>
+                    </div>
+            
+                    {{ if $link.image }}
+                        {{ $image := $siteResources.Get (delimit (slice "resource-img/" $link.image) "") | resources.Fingerprint "md5" }}
+                        {{ $imageResized := $image.Resize "120x120" }}
+                        <div class="article-image">
+                            <img src="{{ $imageResized.RelPermalink }}" width="{{ $imageResized.Width }}" height="{{ $imageResized.Height }}"
+                                loading="lazy" data-key="website-{{ $link.website }}" data-hash="{{ $image.Data.Integrity }}">
+                        </div>
+                    {{ end }}
+                </a>
+            </article>
+        {{ end }}
+    </div>
+    
+    <div class="nonusediv">
+        <h3>🍔软件</h3>
+     </div>
+
+    <div class="article-list--compact nav">
+        {{ $siteResources := resources }}
+        {{ range $i, $link :=  $.Site.Data.software }}
+            <article>
+                <a href="{{ $link.website }}" target="_blank" rel="noopener">
+                    <div class="article-details">
+                        <h2 class="article-title">
+                            {{- $link.title -}}
+                        </h2>
+                        <footer class="article-time">
+                            {{ with $link.description }}
+                                {{ . }}
+                            {{ else }}
+                                {{ $link.website }}
+                            {{ end }}
+                        </footer>
+                    </div>
+            
+                    {{ if $link.image }}
+                        {{ $image := $siteResources.Get (delimit (slice "software-img/" $link.image) "") | resources.Fingerprint "md5" }}
+                        {{ $imageResized := $image.Resize "120x120" }}
+                        <div class="article-image">
+                            <img src="{{ $imageResized.RelPermalink }}" width="{{ $imageResized.Width }}" height="{{ $imageResized.Height }}"
+                                loading="lazy" data-key="software-{{ $link.website }}" data-hash="{{ $image.Data.Integrity }}">
+                        </div>
+                    {{ end }}
+                </a>
+            </article>
+        {{ end }}
+    </div>
+
+    <div class="nonusediv">
+        <h3>🧀资源</h3>
+     </div>
+
+     <div class="article-list--compact nav">
+        {{ $siteResources := resources }}
+        {{ range $i, $link :=  $.Site.Data.resource }}
+            <article>
+                <a href="{{ $link.website }}" target="_blank" rel="noopener">
+                    <div class="article-details">
+                        <h2 class="article-title">
+                            {{- $link.title -}}
+                        </h2>
+                        <footer class="article-time">
+                            {{ with $link.description }}
+                                {{ . }}
+                            {{ else }}
+                                {{ $link.website }}
+                            {{ end }}
+                        </footer>
+                    </div>
+            
+                    {{ if $link.image }}
+                        {{ $image := $siteResources.Get (delimit (slice "website-img/" $link.image) "") | resources.Fingerprint "md5" }}
+                        {{ $imageResized := $image.Resize "120x120" }}
+                        <div class="article-image">
+                            <img src="{{ $imageResized.RelPermalink }}" width="{{ $imageResized.Width }}" height="{{ $imageResized.Height }}"
+                                loading="lazy" data-key="resource-{{ $link.website }}" data-hash="{{ $image.Data.Integrity }}">
+                        </div>
+                    {{ end }}
+                </a>
+            </article>
+        {{ end }}
+    </div>
+
+    <!-- {{ if or (not (isset .Params "comments")) (eq .Params.comments "true")}} 
+        {{ partial "comments/include" . }}
+    {{ end }} -->
+
+    {{ partialCached "footer/footer" . }}
+
+
+
+{{ end }}

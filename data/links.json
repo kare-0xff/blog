@@ -36,16 +36,22 @@
         "description": "🍭时间不在于你拥有多少，而在于你如何使用!"
     },
     {
-        "title": "轻风记",
-        "website": "https://www.3328bk.cn/",
-        "image": "/wentt.jpg",
-        "description": "🔮风停在窗边 嘱咐你要热爱这个世界"
+        "title": "Whisper",
+        "website": "https://blog.whispery.cn/",
+        "image": "/whisper.png",
+        "description": "👀我们的忧愁将会崩解，灵魂将会穿梭如风"
     },
     {
         "title": "FF",
         "website": "https://foolishfox.cn/",
         "image": "/ff.jpg",
         "description": "🃏foolish fox"
+    },
+    {
+        "title": "btwoa",
+        "website": "https://blog.btwoa.com",
+        "image": "/btwoa.jpg",
+        "description": "🙃仍相信人间滚烫"
     },
     {
         "title": "凡梦星尘空间站",

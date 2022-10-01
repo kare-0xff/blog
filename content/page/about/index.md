@@ -4,6 +4,11 @@ slug: "about"
 image: about.png
 license: false
 toc: true
+menu:
+    main:
+        weight: -60
+        params: 
+            icon: user
 ---
 
 # 『关于/留言』

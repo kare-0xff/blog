@@ -1,7 +1,7 @@
 ---
-title: "归档"
+title: "Archives"
 layout: "archives"
-slug: "archives"
+slug: archives
 menu:
     main:
         weight: -70

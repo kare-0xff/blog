@@ -6,7 +6,7 @@ draft: false
 image: hello.png
 tags: [blog]
 categories: blog
-weight: -10000
+weight: -500
 ---
 # Hello World！Hello Blog！
 
@@ -20,5 +20,4 @@ Hi!**👋**我是L1nSn0w.很高心你发现到了这里.目前就读高中，从
 {{< quote-center >}}
 《滕王阁序》<br>王勃老当益壮 <br>宁移白首之心 <br> 穷且益坚 <br> 不坠青云之志。
 {{< /quote-center >}}
-
 

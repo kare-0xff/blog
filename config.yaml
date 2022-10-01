@@ -1,7 +1,7 @@
 baseurl: https://blog.linsnow.cn
 languageCode: zh-cn
 theme: hugo-theme-stack
-paginate: 5
+paginate: 6
 title: L1nSn0w's Blog
 
 languages:
@@ -9,17 +9,17 @@ languages:
         languageName: 中文
         title: L1nSn0w's Blog
         weight: 1
-    # en:
-    #     languageName: English
-    #     title: L1nSn0w's Blog
-    #     weight: 2
+    en:
+        languageName: English
+        title: L1nSn0w's Blog
+        weight: 2
     
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
 
 # GA Tracking ID
-googleAnalytics:
+googleAnalytics: G-3WFJDHZ5LZ
 
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk
@@ -55,6 +55,7 @@ params:
             enabled: true
             local: true
             src: img/avatar.png
+        state: hi
 
     article:
         math: false
@@ -155,7 +156,7 @@ params:
                   limit: 10
             - type: tag-cloud
               params:
-                  limit: 20
+                  limit: 80
         page:
             - type: toc
 
@@ -164,7 +165,7 @@ params:
     opengraph:
         twitter:
             # Your Twitter username
-            site:
+            site: Sn0w_L1n
 
             # Available values: summary, summary_large_image
             card: summary_large_image
@@ -191,63 +192,101 @@ params:
 ### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
-    main:
-        - identifier: home
-          name: Home
-          url: /
-          weight: -100
-          params:
-              ### For demonstration purpose, the home link will be open in a new tab
-              newTab: false
-              icon: home
-        - identifier: archives
-          name: 归档
-          url: /archives
-          weight: -70
-          params: 
-                newTab: false
-                icon: archives
-        - identifier: about
-          name: 关于&留言
-          url: /about
-          weight: -60
-          params:
-                newTab: false
-                icon: user
-        - identifier: search
-          name: 搜索
-          url: /search
-          weight: -60
-          params:
-                newTab: false
-                icon: search         
-        - identifier: links
-          name: 友链
-          url: /links
-          weight: -40
-          params:
-                newTab: false
-                icon: friends     
+    # main:
+        # - identifier: home
+        #   name: Home
+        #   url: /
+        #   weight: -100
+        #   params:
+        #       ### For demonstration purpose, the home link will be open in a new tab
+        #       newTab: false
+        #       icon: home
+        # - identifier: archives
+        #   name: 归档
+        #   url: /archives
+        #   weight: -70
+        #   params: 
+        #         newTab: false
+        #         icon: archives
+        # - identifier: about
+        #   name: 关于&留言
+        #   url: /about
+        #   weight: -60
+        #   params:
+        #         newTab: false
+        #         icon: user
+        # - identifier: search
+        #   name: 搜索
+        #   url: /search
+        #   weight: -60
+        #   params:
+        #         newTab: false
+        #         icon: search         
+        # - identifier: links
+        #   name: 友链
+        #   url: /links
+        #   weight: -40
+        #   params:
+        #         newTab: false
+        #         icon: friends     
+
+        # - identifier: nav
+        #   name: 导航
+        #   url: /nav
+        #   weight: -30
+        #   params:
+        #         newTab: false
+        #         icon: nav 
     
     social:
-        - identifier: github
-          name: GitHub
-          url: https://github.com/lin-snow
+        - identifier: links
+          name: afriend
+          url: /links
           params:
-            icon: brand-github
-
-        - identifier: rss
-          name: RSS
-          url: /index.xml
-          params:
-            icon: rss
+            newTab: false
+            icon: link
 
         - identifier: log
-          name: Log
+          name: bLog
           url: /log
           params:
             newTab: false
             icon: clock  
+
+        - identifier: rss
+          name: cRSS
+          url: /index.xml
+          params:
+            newTab: true
+            icon: rss
+        
+        - identifier: github
+          name: dGitHub
+          url: https://github.com/lin-snow
+          params:
+            newTab: true
+            icon: brand-github
+
+        - identifier: twitter
+          name: eTwitter
+          url: https://twitter.com/Sn0w_L1n
+          params:
+            newTab: true
+            icon: brand-twitter 
+
+        - identifier: facebook
+          name: Facebook
+          url: https://www.facebook.com/l1nsn0w/
+          params:
+            newTab: true
+            icon: facebook  
+
+        - identifier: instagram
+          name: Instagram
+          url: https://www.instagram.com/l1nsn0w/
+          params:
+            newTab: true
+            icon: instagram  
         
 
 related:

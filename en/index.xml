@@ -424,44 +424,6 @@ data-flex-basis="432px"
 &lt;h3 id="message">👺Message&lt;/h3>
 &lt;p>You can leave your footprints here, don&amp;rsquo;t spread advertisements and bad remarks&lt;/p>
 &lt;hr>
-&lt;h3 id="my-book-list">📚&lt;em>&lt;strong>My book list&lt;/strong>&lt;/em>&lt;/h3>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:center">Books&lt;/th>
-&lt;th style="text-align:center">Books&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:center">&lt;img src="https://blog.linsnow.cn/en/about/books/wonder.jpg"
-width="80"
-height="117"
-srcset="https://blog.linsnow.cn/en/about/books/wonder_hu7ce48a7641552c2bc1458a06036b53d4_8670_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/about/books/wonder_hu7ce48a7641552c2bc1458a06036b53d4_8670_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-alt="books1"
-class="gallery-image"
-data-flex-grow="68"
-data-flex-basis="164px"
->&lt;/td>
-&lt;td style="text-align:center">&lt;img src="https://blog.linsnow.cn/en/about/books/bombsonauntdainty.jpg"
-width="80"
-height="123"
-srcset="https://blog.linsnow.cn/en/about/books/bombsonauntdainty_hu5818cec2a3ba7383b3ecfc0264fcd51f_2235_480x0_resize_q75_box.jpg 480w, https://blog.linsnow.cn/en/about/books/bombsonauntdainty_hu5818cec2a3ba7383b3ecfc0264fcd51f_2235_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-alt="books2"
-class="gallery-image"
-data-flex-grow="65"
-data-flex-basis="156px"
->&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">《Wonder》&lt;/td>
-&lt;td style="text-align:center">《Bombs On Aunt Dainty》&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
 &lt;h3 id="to-do-list">📌&lt;em>&lt;strong>To Do List&lt;/strong>&lt;/em>&lt;/h3>
 &lt;table>
 &lt;thead>

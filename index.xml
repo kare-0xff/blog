@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>L1nSn0w's Blog</title><link>https://blog.linsnow.cn/</link><description>Recent content on L1nSn0w's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 22 Jul 2022 01:20:08 -0700</lastBuildDate><atom:link href="https://blog.linsnow.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>我的AndroidTV折腾小记</title><link>https://blog.linsnow.cn/p/android-tv/</link><pubDate>Fri, 22 Jul 2022 01:20:08 -0700</pubDate><guid>https://blog.linsnow.cn/p/android-tv/</guid><description>&lt;img src="https://blog.linsnow.cn/p/android-tv/androidtv.png" alt="Featured image of post 我的AndroidTV折腾小记" />&lt;h2 id="起因">起因&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>L1nSn0w's Blog</title><link>https://blog.linsnow.cn/</link><description>Recent content on L1nSn0w's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 22 Jul 2022 01:20:08 -0700</lastBuildDate><atom:link href="https://blog.linsnow.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>我的AndroidTV折腾小记</title><link>https://blog.linsnow.cn/p/android-tv/</link><pubDate>Fri, 22 Jul 2022 01:20:08 -0700</pubDate><guid>https://blog.linsnow.cn/p/android-tv/</guid><description>&lt;img src="https://blog.linsnow.cn/p/android-tv/androidtv.png" alt="Featured image of post 我的AndroidTV折腾小记" />&lt;h2 id="起因">起因&lt;/h2>
 &lt;p>我向往常一样逛着小破站，虽然我不是什么玩安卓的专业人士，但是有了iOS越狱的基础，一台破安卓手机和Windows11上推出的WSA,我开始的了解了一些安卓领域的东西，大数据真的厉害，刷着刷着就给我推送了小米盒子刷&lt;code>AndroidTV&lt;/code>的视频，没想到电视盒子也能这么搞，这瞬间让我想起了被小米盒子各种广告弹窗支配的恐惧，这下子算是有救了，二话不说，直接开干。🤣&lt;/p>
 &lt;h2 id="什么是androidtv">🤔什么是AndroidTV?&lt;/h2>
 &lt;blockquote>
@@ -5444,21 +5444,9 @@ linux中打包并压缩的文件：.tar.gz&lt;/strong>&lt;/p>
 &lt;li>
 &lt;p>获取生成目录下id_rsa.pub里的密钥就能使用了&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>『置顶』Hello World！Hello Blog！</title><link>https://blog.linsnow.cn/p/hello-blog-hello-hugo/</link><pubDate>Thu, 12 Aug 2021 15:20:00 +0800</pubDate><guid>https://blog.linsnow.cn/p/hello-blog-hello-hugo/</guid><description>&lt;img src="https://blog.linsnow.cn/p/hello-blog-hello-hugo/hello.png" alt="Featured image of post 『置顶』Hello World！Hello Blog！" />&lt;h1 id="hello-worldhello-blog">Hello World！Hello Blog！&lt;/h1>
+&lt;/ol></description></item><item><title>Hello World！Hello Blog！</title><link>https://blog.linsnow.cn/p/hello-blog-hello-hugo/</link><pubDate>Thu, 12 Aug 2021 15:20:00 +0800</pubDate><guid>https://blog.linsnow.cn/p/hello-blog-hello-hugo/</guid><description>&lt;img src="https://blog.linsnow.cn/p/hello-blog-hello-hugo/hello.png" alt="Featured image of post Hello World！Hello Blog！" />&lt;h1 id="hello-worldhello-blog">Hello World！Hello Blog！&lt;/h1>
 &lt;h2 id="main">Main:&lt;/h2>
-&lt;p>Hi!&lt;strong>👋&lt;/strong>我是L1nSn0w.很高心你发现到了这里.目前就读高中，从我初中开始真正接触了互联网和计算机，我对此具有很大的兴趣，后来我有了一台自己比较喜欢的笔记本，它能够满足我的使用需求，我很喜欢它。在对Windows，Linux及macOS等系统和软件的了解足够深入，我开始尝试着学习编程语言，这是一段漫长的过程，也是一个机遇，并且可能影响我大学专业的选择，这很关键，受限于上学等原因，学习的进程不是很快，纯粹靠着兴趣驱动着我，我是个初学者，学习起来很是费劲，于是乎我选择了前端的学习路线，前端是一个很酷的领域，但也是十分复杂。&amp;hellip;&amp;hellip;.到后来我认识了blog，我也开始尝试搭建我的blog，将我在iOS领域的想法与技巧分享到的我blog（我是个陷入apple生态的严重用户）。从hugo、hexo等平台获取到各式各样的blog的模板，并作为blog的确很cool，很幸运的是，我遇到了&lt;em>hugo-theme-stack&lt;/em>，他基本上能够满足我目前对于blog的样式需求，很感谢&lt;em>Jimmy Cai&lt;/em>，这是我的第n个blog，希望能坚持下去，并在此继续分享我的一些小破事。这是我的第一篇post，更新不会太频繁，就从这里开始吧！一切不会太晚.&lt;/p>
-&lt;p>&lt;img src="https://blog.linsnow.cn/p/hello-blog-hello-hugo/hello.png"
-width="1920"
-height="1080"
-srcset="https://blog.linsnow.cn/p/hello-blog-hello-hugo/hello_hud6a4b67c3a9d56117e4183f41c3226f1_11329_480x0_resize_box_3.png 480w, https://blog.linsnow.cn/p/hello-blog-hello-hugo/hello_hud6a4b67c3a9d56117e4183f41c3226f1_11329_1024x0_resize_box_3.png 1024w"
-loading="lazy"
-alt="hello"
-class="gallery-image"
-data-flex-grow="177"
-data-flex-basis="426px"
->&lt;/p>
-&lt;blockquote class="quote-center">
-&lt;p>《滕王阁序》&lt;br>王勃老当益壮 &lt;br>宁移白首之心 &lt;br> 穷且益坚 &lt;br> 不坠青云之志。&lt;/p>&lt;/blockquote></description></item><item><title>PvZ巨佬的养老心得分享</title><link>https://blog.linsnow.cn/p/pvz-share/</link><pubDate>Wed, 16 Jun 2021 20:11:40 +0800</pubDate><guid>https://blog.linsnow.cn/p/pvz-share/</guid><description>&lt;img src="https://blog.linsnow.cn/p/pvz-share/pvz.png" alt="Featured image of post PvZ巨佬的养老心得分享" />&lt;h1 id="pvz巨佬的养老心得分享">PvZ巨佬的养老心得分享&lt;/h1>
+&lt;p>Hi!&lt;strong>👋&lt;/strong>我是L1nSn0w.很高心你发现到了这里.目前就读高中，从我初中开始真正接触了互联网和计算机，我对此具有很大的兴趣，后来我有了一台自己比较喜欢的笔记本，它能够满足我的使用需求，我很喜欢它。在对Windows，Linux及macOS等系统和软件的了解足够深入，我开始尝试着学习编程语言，这是一段漫长的过程，也是一个机遇，并且可能影响我大学专业的选择，这很关键，受限于上学等原因，学习的进程不是很快，纯粹靠着兴趣驱动着我，我是个初学者，学习起来很是费劲，于是乎我选择了前端的学习路线，前端是一个很酷的领域，但也是十分复杂。&amp;hellip;&amp;hellip;.到后来我认识了blog，我也开始尝试搭建我的blog，将我在iOS领域的想法与技巧分享到的我blog（我是个陷入apple生态的严重用户）。从hugo、hexo等平台获取到各式各样的blog的模板，并作为blog的确很cool，很幸运的是，我遇到了&lt;em>hugo-theme-stack&lt;/em>，他基本上能够满足我目前对于blog的样式需求，很感谢&lt;em>Jimmy Cai&lt;/em>，这是我的第n个blog，希望能坚持下去，并在此继续分享我的一些小破事。这是我的第一篇post，更新不会太频繁，就从这里开始吧！一切不会太晚.&lt;/p></description></item><item><title>PvZ巨佬的养老心得分享</title><link>https://blog.linsnow.cn/p/pvz-share/</link><pubDate>Wed, 16 Jun 2021 20:11:40 +0800</pubDate><guid>https://blog.linsnow.cn/p/pvz-share/</guid><description>&lt;img src="https://blog.linsnow.cn/p/pvz-share/pvz.png" alt="Featured image of post PvZ巨佬的养老心得分享" />&lt;h1 id="pvz巨佬的养老心得分享">PvZ巨佬的养老心得分享&lt;/h1>
 &lt;h3 id="关于pvz">关于PvZ&lt;/h3>
 &lt;p>中文名称：植物大战僵尸，一款曾经火遍全球的小游戏。在现在用一个词来形容它：“经典”。&lt;img src="https://blog.linsnow.cn/p/pvz-share/pvz.jpg"
 width="1312"
@@ -14444,29 +14432,7 @@ data-flex-basis="445px"
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>Web标准提出的最佳体验方案：结构、表现、行为相分离。&lt;/p></description></item><item><title/><link>https://blog.linsnow.cn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.linsnow.cn/</guid><description>&lt;h2 id="我自己的blog信息">&lt;strong>我自己的blog信息🤡&lt;/strong>&lt;/h2>
-&lt;blockquote>
-&lt;p>名字： L1nSn0w&amp;rsquo;s Blog&lt;/p>
-&lt;p>博客地址：https://blog.linsnow.cn&lt;/p>
-&lt;p>简介：无限进步.🎈&lt;/p>
-&lt;p>我的头像: &lt;a class="link" href="https://blog.linsnow.cn/img/avatar.png" target="_blank" rel="noopener"
->https://blog.linsnow.cn/img/avatar.png&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="友链申请格式如下">&lt;strong>友链申请格式如下🥳&lt;/strong>&lt;/h2>
-&lt;blockquote>
-&lt;p>你的大名: XXXX&lt;/p>
-&lt;p>你的简介: XXXXXX&lt;/p>
-&lt;p>头像链接: XXXXXXX&lt;/p>
-&lt;p>博客地址: XXXXXXXXXXXXXXXXXXX&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="友链交换须知">友链交换须知😛&lt;/h2>
-&lt;blockquote>
-&lt;p>正常安全的网址，尽量买一个好的域名。&lt;/p>
-&lt;p>站点至少正常运行一个星期。&lt;/p>
-&lt;p>只接受双向友链。&lt;/p>
-&lt;p>头像链接稳定不掉。&lt;/p>
-&lt;p>尽量不要接入广告&lt;/p>
-&lt;/blockquote></description></item><item><title>『 Links 』友情链接</title><link>https://blog.linsnow.cn/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.linsnow.cn/links/</guid><description>&lt;details>
+&lt;p>Web标准提出的最佳体验方案：结构、表现、行为相分离。&lt;/p></description></item><item><title>『 Links 』友情链接</title><link>https://blog.linsnow.cn/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.linsnow.cn/links/</guid><description>&lt;details>
 &lt;summary class="details">🧀点击展开友链交换：&lt;/summary>
 &lt;h2 id="我自己的blog信息">&lt;strong>我自己的blog信息🤡&lt;/strong>&lt;/h2>
 &lt;blockquote>
@@ -14491,7 +14457,7 @@ data-flex-basis="445px"
 &lt;p>头像链接稳定不掉。&lt;/p>
 &lt;p>尽量不要接入广告&lt;/p>
 &lt;/blockquote>
-&lt;/details></description></item><item><title>『 navigation 』导航</title><link>https://blog.linsnow.cn/nav/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.linsnow.cn/nav/</guid><description/></item><item><title>关于</title><link>https://blog.linsnow.cn/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.linsnow.cn/about/</guid><description>&lt;img src="https://blog.linsnow.cn/about/about.png" alt="Featured image of post 关于" />&lt;h1 id="关于留言">『关于/留言』&lt;/h1>
+&lt;/details></description></item><item><title>关于</title><link>https://blog.linsnow.cn/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.linsnow.cn/about/</guid><description>&lt;img src="https://blog.linsnow.cn/about/about.png" alt="Featured image of post 关于" />&lt;h1 id="关于留言">『关于/留言』&lt;/h1>
 &lt;h3 id="我">😊我：&lt;/h3>
 &lt;p>🙌自画像：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">

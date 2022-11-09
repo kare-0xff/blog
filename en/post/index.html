@@ -9,7 +9,7 @@
   RecentComments({
     
     serverURL: 'https://waline.linsnow.cn',
-    count: 4,
+    count: 2,
   }).then(({ comments }) => {
     document.getElementById('waline-recent').innerHTML = comments.map(
       (comment) => `<img src="${comment.avatar}" alt="" >${comment.nick}: ${comment.comment}`

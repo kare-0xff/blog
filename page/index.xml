@@ -85,26 +85,6 @@
 &lt;h3 id="留言">👺留言&lt;/h3>
 &lt;p>在这里可以留下你的足迹，切勿散布广告与不好的言论哦&lt;/p>
 &lt;hr>
-&lt;h3 id="to-do-list">📌&lt;em>&lt;strong>To Do List&lt;/strong>&lt;/em>&lt;/h3>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:center">To Do List&lt;/th>
-&lt;th style="text-align:center">State&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:center">优化blog&lt;/td>
-&lt;td style="text-align:center">&amp;hellip;.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">学习vue.js&lt;/td>
-&lt;td style="text-align:center">x&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
 &lt;h3 id="some-words">📃&lt;em>&lt;strong>Some Words&lt;/strong>&lt;/em>&lt;/h3>
 &lt;details>
 &lt;summary>📃展开详细信息：&lt;/summary>
